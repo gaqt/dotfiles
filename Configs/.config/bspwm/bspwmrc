@@ -32,7 +32,7 @@ then
     picom &
 fi
 
-feh --bg-fill "$HOME/Pictures/Backgrounds/bg0.png"
+feh --bg-fill "$HOME/RiceAssets/Backgrounds/bg0.png"
 
 bash "$HOME/ui/bottombar.sh" &
 
