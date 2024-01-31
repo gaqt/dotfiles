@@ -1,0 +1,9 @@
+export COLOR1="#ff00af"
+export COLOR2="#2c062c"
+export COLOR3="#5fffd7"
+export COLOR4="#262626"
+export COLOR5=17
+
+export LEMONBARBG="#9c0a6f87"
+
+export LIGHTWEIGHT=0
