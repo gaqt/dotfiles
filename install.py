@@ -16,9 +16,9 @@ def backupFile(path: str):
 
     filename = path.split("/").pop()
     reldir = path.split(filename)[0].split(HOME)[1][:-1]
-    newFileDir = HOME+reldir
+    newFileDir = BACKUP_DIR+reldir
 
-    print("Backing up file {path} to {newFileDir}")
+    print("fBacking up file {path} to {newFileDir}")
 
     os.makedirs(newFileDir, exist_ok = True)
     shutil.move(path, f"{newFileDir}/{filename}")
