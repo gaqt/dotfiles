@@ -4,6 +4,7 @@ Still WIP and install script is untested, run at your own risk.
 
 ### Dependencies
 - bspwm
+- sxhkd
 - picom
 - lemonbar
 - kitty
@@ -15,3 +16,10 @@ Still WIP and install script is untested, run at your own risk.
 - flameshot
 - xclip
 - xbindkeys
+- dmenu
+
+If you're having trouble launching kitty because of OpenGL incompatibility (like I did),
+you can try putting this into your .config/sxhkd/sxhkdrc
+```
+LIBGL_ALWAYS_SOFTWARE=true kitty
+```

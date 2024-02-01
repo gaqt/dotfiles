@@ -7,7 +7,7 @@ import shutil
 CWD = os.getcwd()
 TIMESTAMP = datetime.datetime.now().isoformat()
 BACKUP_DIR = CWD+"/Backups/"+TIMESTAMP
-HOME = os.environ["HOME"]
+HOME = "/home/"+CWD.split("/home/")[1].split("/")[0]
 
 
 def backupFile(path: str):
@@ -15,22 +15,26 @@ def backupFile(path: str):
         return
 
     filename = path.split("/").pop()
-    reldir = path.split(filename)[0].split(HOME)[1]
-    newFileDir = os.path.join(BACKUP_DIR+reldir)
+    reldir = path.split(filename)[0].split(HOME)[1][:-1]
+    newFileDir = HOME+reldir
+
+    print("Backing up file {path} to {newFileDir}")
 
     os.makedirs(newFileDir, exist_ok = True)
-    shutil.move(path, os.path.join(newFileDir+filename))
+    shutil.move(path, f"{newFileDir}/{filename}")
 
 
 
 def backupTopic(topic: str):
     topicPath = CWD+"/"+topic
+    
+    print(f"Backing up topic {topic}")
 
     w = os.walk(topicPath)
 
     for root, _, files in w:
         for filename in files:
-            original = os.path.join(root, filename) \
+            original = (f"{root}/{filename}") \
                 .replace(topicPath, HOME)
 
             backupFile(original)
@@ -39,22 +43,26 @@ def backupTopic(topic: str):
 
 def installFile(root: str, path: str):
     filename = path.split("/").pop()
-    reldir = path.split(filename)[0].split(root)[1]
-    newFileDir = os.path.join(HOME, reldir)
+    reldir = path.split(filename)[0].split(root)[1][:-1]
+    newFileDir = HOME+reldir
+
+    print(f"Creating symlink on {filename} on dir {newFileDir}")
 
     os.makedirs(newFileDir, exist_ok = True)
-    os.symlink(path, os.path.join(newFileDir, filename))
+    os.symlink(path, f"{newFileDir}/{filename}")
 
 
 
 def installTopic(topic: str):
     topicPath = CWD+"/"+topic
 
+    print(f"Installing topic {topic}")
+
     w = os.walk(topicPath)
 
     for root, _, files in w:
         for filename in files:
-            filepath = os.path.join(root, filename)
+            filepath = (f"{root}/{filename}")
             installFile(topicPath, filepath)
 
 
@@ -62,6 +70,16 @@ def installTopic(topic: str):
 def main():
     if not CWD.endswith("Rice"):
         raise Exception("Please run this script from the Rice root directory.")
+
+    print("CWD: "+CWD)
+    print("HOME: "+HOME)
+
+    while True:
+        res = input("Proceed? [y/n]: ")
+        if res == "y":
+            break
+        elif res == "n":
+            return
 
     if not os.path.exists(CWD+"/Backups"):
         os.mkdir(CWD+"/Backups")
@@ -82,7 +100,7 @@ def main():
         print("Error occured while installing rice, aborting..")
         raise err
 
-
+    print("Installation was Successful")
 
 
 

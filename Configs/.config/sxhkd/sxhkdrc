@@ -6,7 +6,7 @@ source "$HOME/.themerc"
 
 # terminal emulator
 super + Return
-	kitty
+	xfce4-terminal
 
 # program launcher
 super + @space
