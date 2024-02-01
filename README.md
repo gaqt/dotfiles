@@ -6,7 +6,7 @@ Still WIP and install script is untested, run at your own risk.
 - bspwm
 - sxhkd
 - picom
-- lemonbar
+- lemonbar-xft-git
 - kitty
 - zsh
 - ohmyzsh
@@ -17,6 +17,7 @@ Still WIP and install script is untested, run at your own risk.
 - xclip
 - xbindkeys
 - dmenu
+- sysstat
 
 If you're having trouble launching kitty because of OpenGL incompatibility (like I did),
 you can try putting this into your .config/sxhkd/sxhkdrc
