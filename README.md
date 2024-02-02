@@ -9,9 +9,7 @@ Still WIP, run at your own risk.
 - lemonbar-xft-git
 - zsh
 - ohmyzsh
-- Kanit (included in files)
-- ttf-firacode-nerd
-- feh
+- mpv
 - flameshot
 - xclip
 - xbindkeys
@@ -19,6 +17,7 @@ Still WIP, run at your own risk.
 - sysstat
 - acpi
 - alacritty
+- spleen-font
 
 ### Notes
 

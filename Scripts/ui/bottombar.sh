@@ -2,5 +2,5 @@
 
 source "$HOME/.themerc"
 
-bash "$HOME/ui/bottombarprompt.sh" | lemonbar -p -b -d -g 712x40+60+15 -F "$COLOR3" -B "$LEMONBARBG" -f "FiraCode Nerd Font Mono:size=15"
+$HOME/ui/bottombarprompt.sh | lemonbar -p -b -d -g 600x40+60+15 -F "$COLOR3" -B "$LEMONBARBG" -f "Spleen 6x12:size=18"
 

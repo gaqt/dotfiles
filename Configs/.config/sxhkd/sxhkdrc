@@ -10,11 +10,12 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run -fn "FiraCode Nerd Font Mono:size:15" -nb "$COLOR2" -nf "$COLOR3"
+	dmenu_run -fn "Spleen 8x16:size:16" -nb "$COLOR2" -nf "$COLOR3"
 
 # make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+# this thing is broken lol
+# super + Escape
+# 	pkill -USR1 -x sxhkd
 
 #
 # bspwm hotkeys

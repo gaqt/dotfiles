@@ -12,14 +12,14 @@ POS=0
 i=2
 for arg in "$@"
 do
-    if [ "$arg" == "-i" ]
-    then
-        INPUTCMD=${!i}
-    elif [ "$arg" == "-p" ]
-    then
-        POS=${!i}
-    fi
-    i=$((i+1))
+  if [ "$arg" == "-i" ]
+  then
+    INPUTCMD=${!i}
+  elif [ "$arg" == "-p" ]
+  then
+    POS=${!i}
+  fi
+  i=$((i+1))
 done
 
 MONITORWIDTH=$(xrandr | grep "*" | awk -F 'x' '{ print $1 }')
@@ -27,5 +27,5 @@ MONITORWIDTH=$(xrandr | grep "*" | awk -F 'x' '{ print $1 }')
 LEFT=$((MONITORWIDTH - RIGHT - WIDTH))
 BOTTOM=$((BOTTOM + (HEIGHT + GAP) * POS))
 
-bash -c "$INPUTCMD" | lemonbar -b -d -p -g "$WIDTH"x"$HEIGHT"+"$LEFT"+"$BOTTOM" -f "FiraCode Nerd Font Mono Bold:size=13" -f "Kanit:size=9" -B "$LEMONBARBG" -F "$COLOR3"
+$INPUTCMD | lemonbar -b -d -p -g "$WIDTH"x"$HEIGHT"+"$LEFT"+"$BOTTOM" -f "Spleen 6x12:size=18" -B "$LEMONBARBG" -F "$COLOR3"
 

@@ -1,4 +1,23 @@
 live_config_reload = true
 
+[window]
+  decorations = "None"
+  opacity = 0.92
+  blur = true
+
 [font]
-    normal = { family = "Hack Nerd Font", style = "normal" }
+  normal = { family = "Spleen 6x12", style = "Normal" }
+  size = 12.0
+
+[colors]
+  cursor = { text = "#121212", cursor = "#30ccff" }
+  vi_mode_cursor = { text = "#121212", cursor = "#30ccff" }
+  transparent_background_colors = true
+
+[cursor]
+  style = { shape = "Beam", blinking = "Off" }
+  vi_mode_style = { shape = "Block", blinking = "Off" }
+  thickness = 0.20
+
+[mouse]
+  hide_when_typing = true
