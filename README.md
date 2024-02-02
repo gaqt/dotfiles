@@ -2,6 +2,8 @@
 
 Still WIP, run at your own risk.
 
+Wallpapers by Valenberg
+
 ### Dependencies
 - bspwm
 - sxhkd
