@@ -26,6 +26,7 @@ def backupFile(path: str):
 
     print(f"Backing up file {path} to {newPath}")
 
+
     os.makedirs(newFileDir, exist_ok = True)
     shutil.move(path, f"{newPath}")
 
@@ -33,7 +34,7 @@ def backupFile(path: str):
 
 def backupTopic(topic: str):
     topicPath = CWD+"/"+topic
-    
+
     print(f"Backing up topic {topic}")
 
     w = os.walk(topicPath)
