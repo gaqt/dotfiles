@@ -6,7 +6,7 @@ source "$HOME/.themerc"
 
 # terminal emulator
 super + Return
-	xfce4-terminal
+	alacritty
 
 # program launcher
 super + @space

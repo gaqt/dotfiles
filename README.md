@@ -1,13 +1,12 @@
 # My Personal Rice
 
-Still WIP and install script is untested, run at your own risk.
+Still WIP, run at your own risk.
 
 ### Dependencies
 - bspwm
 - sxhkd
 - picom
 - lemonbar-xft-git
-- kitty
 - zsh
 - ohmyzsh
 - Kanit (included in files)
@@ -19,9 +18,13 @@ Still WIP and install script is untested, run at your own risk.
 - dmenu
 - sysstat
 - acpi
+- alacritty
 
-If you're having trouble launching kitty because of OpenGL incompatibility (like I did),
-you can try putting this into your .config/sxhkd/sxhkdrc
+### Notes
+
+Since the install script runs 'chmod +x' on every file, there is
+gonna be a bunch of unstaged files from permission changes, you can
+get rid of this by running:
 ```
-LIBGL_ALWAYS_SOFTWARE=true kitty
+git config core.filemode false
 ```

@@ -14,14 +14,20 @@ def backupFile(path: str):
     if not os.path.exists(path):
         return
 
+    if os.path.islink(path) and CWD in os.readlink(path):
+        print(f"File {path} is owned symlink, removing..")
+        os.remove(path)
+        return
+
     filename = path.split("/").pop()
     reldir = path.split(filename)[0].split(HOME)[1][:-1]
-    newFileDir = HOME+reldir
+    newFileDir = BACKUP_DIR+reldir
+    newPath = f"{newFileDir}/{filename}"
 
-    print("Backing up file {path} to {newFileDir}")
+    print(f"Backing up file {path} to {newPath}")
 
     os.makedirs(newFileDir, exist_ok = True)
-    shutil.move(path, f"{newFileDir}/{filename}")
+    shutil.move(path, f"{newPath}")
 
 
 
@@ -45,11 +51,13 @@ def installFile(root: str, path: str):
     filename = path.split("/").pop()
     reldir = path.split(filename)[0].split(root)[1][:-1]
     newFileDir = HOME+reldir
+    newPath = f"{newFileDir}/{filename}"
 
-    print(f"Creating symlink on {filename} on dir {newFileDir}")
+    print(f"Creating symlink {newPath} -> {path}")
 
     os.makedirs(newFileDir, exist_ok = True)
-    os.symlink(path, f"{newFileDir}/{filename}")
+    os.symlink(path, newPath)
+    os.system(f"chmod +x {newPath}")
 
 
 
@@ -81,9 +89,6 @@ def main():
         elif res == "n":
             return
 
-    if not os.path.exists(CWD+"/Backups"):
-        os.mkdir(CWD+"/Backups")
-
     try:
         backupTopic("Assets")
         backupTopic("Configs")
@@ -100,7 +105,7 @@ def main():
         print("Error occured while installing rice, aborting..")
         raise err
 
-    print("Installation was Successful")
+    print("\nInstallation was Successful")
 
 
 
