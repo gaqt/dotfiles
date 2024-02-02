@@ -10,7 +10,6 @@ Wallpapers by Valenberg
 - picom
 - lemonbar-xft-git
 - zsh
-- ohmyzsh
 - mpv
 - flameshot
 - xclip
