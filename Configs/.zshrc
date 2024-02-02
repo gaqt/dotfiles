@@ -36,3 +36,9 @@ status() {
 
 PROMPT="%{%f%b%k%} $(context) $(dir) $(status)
  %B::%{%f%b%k%} "
+
+
+QVIM="nvim -u '$HOME/.config/nvim/lua/rawinit.lua'"
+alias qvim=$QVIM
+
+export PATH="$HOME/bin/:$PATH"

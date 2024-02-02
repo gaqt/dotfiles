@@ -39,7 +39,7 @@
 
 # Examples of commands:
 
-"xbindkeys_show" 
+"xbindkeys_show"
   control+shift + q
 
 # set directly keycode (here control + f with my keyboard)
@@ -67,15 +67,15 @@
 
 
 # Take Screenshot (Select Area)
-"flameshot full -d 0 -c -p $SCREENSHOTDIR"
+"flameshot full -d 0 -c -p $HOME/Pictures/Screenshots"
     Print
 
 # Take Screenshot (Screen)
-"flameshot screen -d 0 -c -p $SCREENSHOTDIR"
+"flameshot screen -d 0 -c -p $HOME/Pictures/Screenshots"
     Mod4 + Super_L + Print
 
 # Take Screenshot (Full)
-"flameshot gui -d 0 -c -p $SCREENSHOTDIR"
+"flameshot gui -d 0 -c -p $HOME/Pictures/Screenshots"
     Shift + Shift_L + Mod4 + Super_L + Print
 
 
