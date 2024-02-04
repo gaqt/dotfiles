@@ -7,7 +7,7 @@ live_config_reload = true
 
 [font]
   normal = { family = "Spleen 6x12", style = "Normal" }
-  size = 12.0
+  size = 12
 
 [colors]
   cursor = { text = "#121212", cursor = "#30ccff" }
