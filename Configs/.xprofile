@@ -6,3 +6,5 @@ xset r rate 200 50
 flameshot &
 
 xbindkeys &
+
+export TERMINAL="alacritty"

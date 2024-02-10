@@ -20,7 +20,7 @@ def backupFile(path: str):
         return
 
     filename = path.split("/").pop()
-    reldir = path.split(filename)[0].split(HOME)[1][:-1]
+    reldir = path[:path.rfind(filename)].split(HOME)[1][:-1]
     newFileDir = BACKUP_DIR+reldir
     newPath = f"{newFileDir}/{filename}"
 
@@ -50,7 +50,7 @@ def backupTopic(topic: str):
 
 def installFile(root: str, path: str):
     filename = path.split("/").pop()
-    reldir = path.split(filename)[0].split(root)[1][:-1]
+    reldir = path[:path.rfind(filename)].split(root)[1][:-1]
     newFileDir = HOME+reldir
     newPath = f"{newFileDir}/{filename}"
 
