@@ -19,6 +19,8 @@ Wallpapers by Valenberg
 - acpi
 - alacritty
 - spleen-font
+- i3-wm
+- i3status
 
 ### Notes
 
