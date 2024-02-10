@@ -4,10 +4,11 @@ live_config_reload = true
   decorations = "None"
   opacity = 0.92
   blur = true
+  dynamic_padding = true
 
 [font]
   normal = { family = "Hack Nerd Font Mono", style = "Regular" }
-  size = 11
+  size = 11.5
 
 [colors]
   cursor = { text = "#121212", cursor = "#30ccff" }

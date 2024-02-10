@@ -34,11 +34,37 @@ status() {
   [[ -n "$symbols" ]] && printf "$symbols"
 }
 
-PROMPT="%{%f%b%k%} $(context) $(dir) $(status)
- %B::%{%f%b%k%} "
-
+PROMPT="%{%f%b%k%}$(context) $(dir) $(status)
+%B::%{%f%b%k%} "
+# ħʒĸł´·•µ”“„©»«æßð/°®ŧ←↓→ħʒ→øþ´~
 
 QVIM="nvim -u '$HOME/.config/nvim/lua/rawinit.lua'"
 alias qvim=$QVIM
+
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip -color=auto'
+export LESS='-R --use-color -Dd+r$Du+b$'
+alias ls='ls --color=auto'
+export MANPAGER="less $LESS"
+export MANROFFOPT="-P -c"
+alias pacman='pacman --color=auto'
+
+zmodload zsh/zpty
+
+pty() {
+	zpty pty-${UID} ${1+$@}
+	if [[ ! -t 1 ]];then
+		setopt local_traps
+		trap '' INT
+	fi
+	zpty -r pty-${UID}
+	zpty -d pty-${UID}
+}
+
+ptyless() {
+	pty $@ | less
+}
+
 
 export PATH="$HOME/bin/:$PATH"
