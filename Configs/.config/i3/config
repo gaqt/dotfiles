@@ -221,3 +221,9 @@ client.background $purplet
 
 exec --no-startup-id "picom &"
 exec --no-startup-id "feh --bg-fill $HOME/RiceAssets/Backgrounds/bg3.jpg"
+
+bindsym Print exec --no-startup-id flameshot full -d 0 -c -p "$HOME/Pictures/Screenshots/" &
+bindsym $mod+Print exec --no-startup-id flameshot screen -d 0 -c -p "$HOME/Pictures/Screenshots/" &
+bindsym $mod+Shift+Print exec --no-startup-id flameshot gui -d 0 -c -p "$HOME/Pictures/Screenshots/" &
+
+

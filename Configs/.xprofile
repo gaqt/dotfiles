@@ -3,9 +3,8 @@ setxkbmap -option compose:caps
 xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
 xset r rate 200 50
 
+dunst &
 flameshot &
-
-xbindkeys &
 
 export TERMINAL="alacritty"
 
