@@ -8,3 +8,5 @@ flameshot &
 xbindkeys &
 
 export TERMINAL="alacritty"
+
+source $HOME/.localconfigs

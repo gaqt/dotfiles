@@ -3,16 +3,16 @@ live_config_reload = true
 [window]
   decorations = "None"
   opacity = 0.92
-  blur = true
+  blur = false
   dynamic_padding = true
 
 [font]
   normal = { family = "Hack Nerd Font Mono", style = "Regular" }
-  size = 11.5
+  size = 11.2
 
 [colors]
-  cursor = { text = "#121212", cursor = "#30ccff" }
-  vi_mode_cursor = { text = "#121212", cursor = "#30ccff" }
+  cursor = { text = "#121212", cursor = "#cf40ff" }
+  vi_mode_cursor = { text = "#121212", cursor = "#af30ff" }
   transparent_background_colors = true
 
 [cursor]
