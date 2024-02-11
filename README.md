@@ -22,6 +22,7 @@ Supports bspwm and i3, moving to i3 though
 - nerd-fonts
 - i3-wm
 - i3status
+- tmux
 
 ### Notes
 

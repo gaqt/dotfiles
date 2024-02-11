@@ -3,7 +3,7 @@ live_config_reload = true
 [window]
   decorations = "None"
   opacity = 0.92
-  blur = false
+  blur = true
   dynamic_padding = true
 
 [font]

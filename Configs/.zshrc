@@ -49,6 +49,10 @@ alias ls='ls --color=auto'
 export MANPAGER="less $LESS"
 export MANROFFOPT="-P -c"
 alias pacman='pacman --color=auto'
+export EDITOR="nvim"
+export visual="vim"
+
+
 
 zmodload zsh/zpty
 
