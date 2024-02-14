@@ -23,6 +23,8 @@ Supports bspwm and i3, moving to i3 though
 - i3-wm
 - i3status
 - tmux
+- feh
+- dunst
 
 ### Notes
 

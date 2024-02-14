@@ -7,11 +7,11 @@ live_config_reload = true
   dynamic_padding = true
 
 [font]
-  normal = { family = "Hack Nerd Font Mono", style = "Regular" }
+  normal = { family = "Cousine Nerd Font", style = "Regular" }
   size = 11.2
 
 [colors]
-  cursor = { text = "#121212", cursor = "#cf40ff" }
+  cursor = { text = "#121212", cursor = "#df90ff" }
   vi_mode_cursor = { text = "#121212", cursor = "#af30ff" }
   transparent_background_colors = true
 
