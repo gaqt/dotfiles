@@ -106,6 +106,8 @@ def main():
         print("Error occured while installing rice, aborting..")
         raise err
 
+    open(f"{HOME}/.localconfigs", mode='a').close()
+
     print("\nInstallation was Successful")
 
 
