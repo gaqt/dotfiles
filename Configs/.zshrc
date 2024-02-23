@@ -34,9 +34,10 @@ status() {
   [[ -n "$symbols" ]] && printf "$symbols"
 }
 
-PROMPT="%{%f%b%k%}$(context) $(dir) $(status)
-%B::%{%f%b%k%} "
-# ħʒĸł´·•µ”“„©»«æßð/°®ŧ←↓→ħʒ→øþ´~
+# PROMPT="%{%f%b%k%}$(context) $(dir) $(status)
+# %B::%{%f%b%k%} "
+
+eval "$(starship init zsh)"
 
 QVIM="nvim -u '$HOME/.config/nvim/lua/rawinit.lua'"
 alias qvim=$QVIM
@@ -72,3 +73,4 @@ ptyless() {
 
 
 export PATH="$HOME/bin/:$PATH"
+export PATH="$HOME/.cargo/bin/:$PATH"
