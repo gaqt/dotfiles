@@ -6,7 +6,7 @@ source "$HOME/.themerc"
 
 # terminal emulator
 super + Return
-	alacritty
+	kitty
 
 # program launcher
 super + @space

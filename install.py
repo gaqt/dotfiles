@@ -26,10 +26,8 @@ def backupFile(path: str):
 
     print(f"Backing up file {path} to {newPath}")
 
-
-    os.makedirs(newFileDir, exist_ok = True)
+    os.makedirs(newFileDir, exist_ok=True)
     shutil.move(path, f"{newPath}")
-
 
 
 def backupTopic(topic: str):
@@ -47,7 +45,6 @@ def backupTopic(topic: str):
             backupFile(original)
 
 
-
 def installFile(root: str, path: str):
     filename = path.split("/").pop()
     reldir = path[:path.rfind(filename)].split(root)[1][:-1]
@@ -56,10 +53,9 @@ def installFile(root: str, path: str):
 
     print(f"Creating symlink {newPath} -> {path}")
 
-    os.makedirs(newFileDir, exist_ok = True)
+    os.makedirs(newFileDir, exist_ok=True)
     os.symlink(path, newPath)
     os.system(f"chmod +x {newPath}")
-
 
 
 def installTopic(topic: str):
@@ -73,7 +69,6 @@ def installTopic(topic: str):
         for filename in files:
             filepath = (f"{root}/{filename}")
             installFile(topicPath, filepath)
-
 
 
 def main():
@@ -106,10 +101,10 @@ def main():
         print("Error occured while installing rice, aborting..")
         raise err
 
+    os.makedirs(f"{HOME}/Pictures/Screenshots", exist_ok=True)
     open(f"{HOME}/.localconfigs", mode='a').close()
 
     print("\nInstallation was Successful")
-
 
 
 if __name__ == '__main__':

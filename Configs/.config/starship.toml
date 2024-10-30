@@ -1,58 +1,190 @@
-# Setups
-format="""
-[](bg:none fg:#f38ba8)\
-$username\
-[](bg:#fab387 fg:#f38ba8)\
-$hostname\
-[](bg:#f9e2af fg:#fab387)\
-$directory\
-[](bg:#a6e3a1 fg:#f9e2af)\
+format = """
+[$username$hostname](bold green)\
+$shlvl\
+[$directory](bold blue)\
 $git_branch\
-[](bg:#74c7ec fg:#a6e3a1)\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$sudo\
 $cmd_duration\
-[](bg:none fg:#74c7ec)\
 $line_break\
-$character\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character
 """
-add_newline = false 
 
-# Prompt symbols 
-[character]
-success_symbol = "[ 󱞪](#a6e3a1 bold)"
-error_symbol = "[ 󱞪](#f38ba8)"
-vicmd_symbol = "[ 󱞪❯](#f9e2af)"
+[aws]
+symbol = "  "
 
-[username]
-disabled = false
-show_always = true
-format = "[ $user ](bg:#f38ba8 fg:#1e1e2e bold)"
+[buf]
+symbol = " "
 
-[hostname]
-disabled = false
-ssh_only = false
-format = "[ 󰌽 $hostname ]( bg:#fab387 fg:#1e1e2e bold)"
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
 
 [directory]
-disabled =false
-format = "[  $path](bg:#f9e2af fg:#1e1e2e bold)"
-truncation_length = 5
-truncate_to_repo=false
+read_only = " 󰌾"
 
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-"Videos" = " "
-"iso" = "󰌽 "
-".config" = ""
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
 
 [git_branch]
-disabled =true
-format = '[  $branch](bg:#a6e3a1 fg:#1e1e2e bold)'
+symbol = " "
 
-[cmd_duration]
-min_time = 4
-show_milliseconds = false
-disabled = false
-format = '[ 󱑆 $duration](bg:#74c7ec fg:#1e1e2e bold)'
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[character]
+success_symbol = "[󰘧](bold green)"
+error_symbol = "[](bold red)"
