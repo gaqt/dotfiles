@@ -1,7 +1,7 @@
 [user]
 	name = atomoxetine
 	email = 132525922+atomoxetine@users.noreply.github.com
-	signingkey = /home/logemi/.ssh/id_rsa.pub
+	signingkey = /Users/logemi/.ssh/id_rsa.pub
 [gpg]
 	format = ssh
 [push]
@@ -13,4 +13,4 @@
 [tag]
 	gpgsign = true
 [gpg "ssh"]
-	allowedSignersFile = /home/logemi/.ssh/allowed_signers
+	allowedSignersFile = /Users/logemi/.ssh/allowed_signers
