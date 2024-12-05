@@ -11,7 +11,7 @@
 
 [font]
   normal = { family = "GohuFont uni11 Nerd Font", style = "Regular" }
-  size = 12
+  size = 13
 
 [colors]
   cursor = { text = "#121212", cursor = "#df90ff" }
