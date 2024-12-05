@@ -1,1 +1,26 @@
-/home/logemi/Rice/Configs/.config/alacritty/alacritty.toml
+[general]
+  live_config_reload = true
+  import = [
+    "~/.config/alacritty/themes/themes/nightfox.toml"
+  ]
+
+[window]
+  opacity = 0.92
+  blur = false
+  dynamic_padding = true
+
+[font]
+  normal = { family = "GohuFont uni11 Nerd Font", style = "Regular" }
+  size = 12
+
+[colors]
+  cursor = { text = "#121212", cursor = "#df90ff" }
+  vi_mode_cursor = { text = "#121212", cursor = "#af30ff" }
+  transparent_background_colors = true
+
+[cursor]
+  style = { shape = "Block", blinking = "Off" }
+  vi_mode_style = { shape = "Block", blinking = "Off" }
+
+[mouse]
+  hide_when_typing = false
