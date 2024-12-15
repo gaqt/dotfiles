@@ -10,8 +10,8 @@
   dynamic_padding = true
 
 [font]
-  normal = { family = "GohuFont uni11 Nerd Font", style = "Regular" }
-  size = 13
+  normal = { family = "Hasklug Nerd Font", style = "Regular" }
+  size = 12
 
 [colors]
   cursor = { text = "#121212", cursor = "#df90ff" }
