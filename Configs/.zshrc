@@ -15,7 +15,7 @@ export visual="vim"
 alias ls="exa"
 alias cat="bat"
 alias car="cat"
-#alias cargo="cargo mommy"
+alias cargo="cargo mommy"
 alias icat="kitten icat"
 
 export PATH="$HOME/bin/:$PATH"
@@ -35,7 +35,7 @@ if [[ -o interactive ]]; then
     eval "$(starship init zsh)"
 
     # shell is interactive
-    hyfetch
+    # hyfetch
 
     green=$(tput setaf 2)
     white=$(tput setaf 7)
@@ -52,3 +52,10 @@ function y() {
 }
 
 [ -f "/home/logemi/.ghcup/env" ] && . "/home/logemi/.ghcup/env" # ghcup-env
+
+# bun completions
+[ -s "/home/logemi/.bun/_bun" ] && source "/home/logemi/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

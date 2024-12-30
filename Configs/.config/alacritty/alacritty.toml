@@ -1,16 +1,15 @@
-[general]
-  live_config_reload = true
-  import = [
+live_config_reload = true
+import = [
     "~/.config/alacritty/themes/themes/nightfox.toml"
-  ]
+]
 
 [window]
-  opacity = 0.92
+  opacity = 0.95
   blur = false
   dynamic_padding = true
 
 [font]
-  normal = { family = "Hasklug Nerd Font", style = "Regular" }
+  normal = { family = "Hack Nerd Font", style = "Regular" }
   size = 12
 
 [colors]
