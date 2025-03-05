@@ -18,6 +18,9 @@ alias car="cat"
 alias cargo="cargo mommy"
 alias icat="kitten icat"
 
+alias echo-mic="pactl load-module module-loopback latency_msec=200 source=alsa_input.pci-0000_03_00.6.analog-stereo sink=alsa_output.pci-0000_03_00.6.analog-stereo"
+alias echo-mic-off="pactl unload-module module-loopback"
+
 export PATH="$HOME/bin/:$PATH"
 export PATH="$HOME/.cargo/bin/:$PATH"
 export PATH="$PATH:/home/logemi/.local/bin"
@@ -51,11 +54,12 @@ function y() {
     rm -f -- "$tmp"
 }
 
-[ -f "/home/logemi/.ghcup/env" ] && . "/home/logemi/.ghcup/env" # ghcup-env
 
 # bun completions
 [ -s "/home/logemi/.bun/_bun" ] && source "/home/logemi/.bun/_bun"
 
-# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH"
+
+[ -f "/home/logemi/.ghcup/env" ] && . "/home/logemi/.ghcup/env" # ghcup-env

@@ -100,10 +100,15 @@ lazy.setup({
     { 'norcalli/nvim-colorizer.lua' },
     { "zootedb0t/citruszest.nvim" },
     { "EdenEast/nightfox.nvim" },
-    { 'p00f/alabaster.nvim',        priority = 1000,     lazy = false },
+    { "ray-x/aurora" },
+    { 'luisiacc/gruvbox-baby' },
+    { 'olivercederborg/poimandres.nvim' },
+    { 'p00f/alabaster.nvim',            priority = 1000,     lazy = false },
     { 'rebelot/kanagawa.nvim' },
-    { "ellisonleao/gruvbox.nvim",   priority = 1000,     config = true,  opts = ... },
-    { "catppuccin/nvim",            name = "catppuccin", priority = 1000 },
+    { "ellisonleao/gruvbox.nvim",       priority = 1000,     config = true,  opts = ... },
+    { "bluz71/vim-moonfly-colors",      name = "moonfly",    lazy = false,   priority = 1000 },
+    { "bluz71/vim-nightfly-colors",     name = "nightfly",   lazy = false,   priority = 1000 },
+    { "catppuccin/nvim",                name = "catppuccin", priority = 1000 },
     {
         "folke/tokyonight.nvim",
         lazy = false,
@@ -125,10 +130,11 @@ lazy.setup({
     },
     {
         "folke/tokyonight.nvim",
-         lazy = false,
-         priority = 1000,
-         opts = {},
+        lazy = false,
+        priority = 1000,
+        opts = {},
     },
+    { "rose-pine/neovim", name = "rose-pine" },
     { 'justinmk/vim-sneak' },
     { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
     {
@@ -268,7 +274,7 @@ require('lualine').setup {
 }
 
 -- colorscheme
-vim.cmd.colorscheme 'terafox'
+vim.cmd.colorscheme 'poimandres'
 
 -- nvim-tree
 local HEIGHT_RATIO = 0.8
@@ -495,7 +501,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
         -- Enable completion triggered by <c-x><c-o>
-        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+        -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
         local opts = { buffer = ev.buf }
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -509,7 +515,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, opts)
         -- vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, opts)
-        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
         vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
         vim.keymap.set('n', '<leader>fo', function()
@@ -532,12 +538,13 @@ cmp.setup({
             luasnip.lsp_expand(args.body)
         end
     },
-    sources = {
-        { name = 'path' },
-        { name = 'nvim_lsp', keyword_length = 3 },
-        { name = 'buffer',   keyword_length = 2 },
-        { name = 'luasnip',  keyword_length = 1 },
-    },
+    -- uncomment to enable automatic completions
+    -- sources = {
+    --     { name = 'path' },
+    --     { name = 'nvim_lsp', keyword_length = 3 },
+    --     { name = 'buffer',   keyword_length = 2 },
+    --     { name = 'luasnip',  keyword_length = 1 },
+    -- },
     window = {
         documentation = cmp.config.window.bordered(),
     },
@@ -579,17 +586,29 @@ cmp.setup({
                 fallback()
             end
         end, { 'i', 's' }),
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            local col = vim.fn.col('.') - 1
-
-            if cmp.visible() then
-                cmp.select_next_item(select_opts)
-            elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-                fallback()
-            else
-                cmp.complete()
-            end
-        end, { 'i', 's' }),
+        ['<C-k>'] = cmp.mapping(function(fallback)
+            cmp.complete({
+                config = {
+                    sources = {
+                        { name = 'path' },
+                        { name = 'nvim_lsp' },
+                        { name = 'buffer' },
+                        { name = 'luasnip' }
+                    }
+                }
+            })
+        end, { 'i', 's' })
+        -- ['<Tab>'] = cmp.mapping(function(fallback)
+        --     local col = vim.fn.col('.') - 1
+        --
+        --     if cmp.visible() then
+        --         cmp.select_next_item(select_opts)
+        --     elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        --         fallback()
+        --     else
+        --         cmp.complete()
+        --     end
+        -- end, { 'i', 's' }),
     },
 })
 

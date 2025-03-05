@@ -12,8 +12,9 @@ vim.opt.autoindent = true
 -- vim.opt.cc = '80'
 vim.opt.expandtab = true
 vim.opt.clipboard = 'unnamed'
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 
+vim.opt.guicursor = "n-v-c-i:block"
 
 -- netrw settings
 vim.g.netrw_banner = 0

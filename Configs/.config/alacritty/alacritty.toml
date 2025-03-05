@@ -10,7 +10,7 @@ import = [
 
 [font]
   normal = { family = "Hack Nerd Font", style = "Regular" }
-  size = 12
+  size = 14
 
 [colors]
   cursor = { text = "#121212", cursor = "#df90ff" }
