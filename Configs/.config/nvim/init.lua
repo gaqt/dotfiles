@@ -123,8 +123,8 @@ lazy.setup({
             fm.setup {
                 glow = false,
                 brightness = 0,
-                theme = 'retrowave',
-                transparent = false,
+                theme = 'delta',
+                transparent = true,
             }
         end
     },
@@ -134,9 +134,18 @@ lazy.setup({
         priority = 1000,
         opts = {},
     },
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "rose-pine/neovim",        name = "rose-pine" },
     { 'justinmk/vim-sneak' },
-    { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+    { 'akinsho/bufferline.nvim', version = "*",     dependencies = 'nvim-tree/nvim-web-devicons' },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -211,6 +220,23 @@ lazy.setup({
             -- options
         },
     },
+    {
+        "smoka7/multicursors.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            'nvimtools/hydra.nvim',
+        },
+        opts = {},
+        cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+        keys = {
+            {
+                mode = { 'v', 'n' },
+                '<Leader>g',
+                '<cmd>MCstart<cr>',
+                desc = 'Create a selection for selected text or word under the cursor',
+            },
+        },
+    }
     ---@type LazySpec
     -- {
     --     "mikavilpas/yazi.nvim",
@@ -274,7 +300,7 @@ require('lualine').setup {
 }
 
 -- colorscheme
-vim.cmd.colorscheme 'poimandres'
+vim.cmd.colorscheme 'fluoromachine'
 
 -- nvim-tree
 local HEIGHT_RATIO = 0.8

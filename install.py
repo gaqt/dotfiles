@@ -72,7 +72,7 @@ def installTopic(topic: str):
 
 
 def main():
-    if not CWD.endswith("Rice"):
+    if not CWD.endswith("dotfiles"):
         raise Exception("Please run this script from the Rice root directory.")
 
     print("CWD: "+CWD)
@@ -86,7 +86,7 @@ def main():
             return
 
     try:
-        backupTopic("Assets")
+        # backupTopic("Assets")
         backupTopic("Configs")
         backupTopic("Scripts")
     except Exception as err:
@@ -94,7 +94,7 @@ def main():
         raise err
 
     try:
-        installTopic("Assets")
+        # installTopic("Assets")
         installTopic("Configs")
         installTopic("Scripts")
     except Exception as err:

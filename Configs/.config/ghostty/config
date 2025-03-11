@@ -42,7 +42,11 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-font-family = "Lilex Nerd Font"
-font-size = 12.5
-background-opacity = 0.95
-theme = tokyonight_moon
+# the quick brown fox jumps over the lazy dog {} [] () => >> -> == != === !== :: && ||
+
+font-family = "Hasklug Nerd Font"
+font-size = 12
+background-opacity = 0.80
+theme = MaterialDesignColors
+maximize = true
+command = "~/.cargo/bin/nu"

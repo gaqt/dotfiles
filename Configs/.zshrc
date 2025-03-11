@@ -2,21 +2,21 @@
 
 QVIM="nvim -u '$HOME/.config/nvim/lua/rawinit.lua'"
 alias qvim=$QVIM
+alias v=nvim
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 export LESS='-R'
-alias ls='ls --color=auto'
 export MANPAGER="less $LESS"
 export MANROFFOPT="-P -c"
 alias pacman='pacman --color=auto'
+alias paru='paru --color=auto'
 export EDITOR="nvim"
 export visual="vim"
 alias ls="exa"
-alias cat="bat"
-alias car="cat"
+# alias cat="bat"
+# alias car="cat"
 alias cargo="cargo mommy"
-alias icat="kitten icat"
 
 alias echo-mic="pactl load-module module-loopback latency_msec=200 source=alsa_input.pci-0000_03_00.6.analog-stereo sink=alsa_output.pci-0000_03_00.6.analog-stereo"
 alias echo-mic-off="pactl unload-module module-loopback"

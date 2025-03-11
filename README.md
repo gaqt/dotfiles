@@ -1,45 +1,30 @@
-# My Personal Rice
+# My Dotfiles
 
-Still WIP, run at your own risk.
+Not intended to work on any machine
 
-Supports bspwm and i3, moving to i3 though
-
-### Dependencies
-- bspwm
-- sxhkd
-- picom
-- lemonbar-xft-git
-- zsh
-- mpv
-- flameshot
-- xclip
-- xbindkeys
-- dmenu
-- sysstat
-- acpi
-- alacritty
-- spleen-font
-- nerd-fonts
-- i3-wm
-- i3status
-- tmux
-- feh
-- dunst
-- starship
-
-### Notes
-
-Since the install script runs 'chmod +x' on every file, there is
-gonna be a bunch of unstaged files from permission changes, you can
-get rid of this by running:
+Install dependencies:
 ```
+
+paru -S --needed nano vim neovim flameshot xorg-server xclip plasma /
+    kde-applications cmake make npm yarn rustup ghostty nerd-fonts /
+    python python-pip btop tmux 7zip ffmpeg fzf ripgrep neofetch hyfetch /
+    jq openssh zoxide
+
+rustup default stable
+
+cargo instal --locked cargo-binstall
+cargo binstall --locked cargo-mommy bacon yazi-fm yazi-cli starship bat exa /
+    cargo-expand nushell
+
+```
+
+Install script (run from repo directory):
+```
+
 git config core.filemode false
+python3 install.py
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+nu ~/.config/nushell/setup.nu
+
 ```
-
-# Credits
-
-Neovim Config used is [My own neovim config](https://github.com/atomoxetine/nvim)
-
-Wallpaper 0, 1, 2 by Valenberg
-I couldn't find the author of wallpaper 3
 
