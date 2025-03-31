@@ -99,6 +99,7 @@ lazy.setup({
     },
     { 'norcalli/nvim-colorizer.lua' },
     { "zootedb0t/citruszest.nvim" },
+    -- { "cordx56/rustowl", dependencies = { "neovim/nvim-lspconfig" } },
     { "EdenEast/nightfox.nvim" },
     { "ray-x/aurora" },
     { 'luisiacc/gruvbox-baby' },
@@ -123,7 +124,7 @@ lazy.setup({
             fm.setup {
                 glow = false,
                 brightness = 0,
-                theme = 'delta',
+                theme = 'fluoromachine',
                 transparent = true,
             }
         end
@@ -637,6 +638,21 @@ cmp.setup({
         -- end, { 'i', 's' }),
     },
 })
+
+-- Rust Owl
+
+-- lspconfig.rustowl.setup {
+--     trigger = {
+--         hover = false,
+--     },
+-- }
+
+-- vim.keymap.set(
+--     "n",
+--     "<c-'>",
+--     require("rustowl").rustowl_cursor,
+--     { noremap = true, silent = true }
+-- )
 
 require("nvim-autopairs").setup({})
 

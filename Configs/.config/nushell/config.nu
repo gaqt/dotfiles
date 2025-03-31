@@ -17,8 +17,8 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-$env.PNPM_HOME = "~/Library/pnpm"
-$env.BUN_INSTALL = "~/.bun"
+$env.PNPM_HOME = ($env.HOME | path join "Library/pnpm")
+$env.BUN_INSTALL = ($env.HOME | path join "/.bun")
 $env.LANG = "en_US.UTF-8"
 
 $env.config.show_banner = false
@@ -47,12 +47,12 @@ $env.PROMPT_INDICATOR_VI_INSERT = ": "
 $env.PROMPT_INDICATOR_VI_NORMAL = "〉"
 $env.PROMPT_MULTILINE_INDICATOR = "::: "
 
-alias qvim = nvim -u '$HOME/.config/nvim/lua/rawinit.lua'
+alias qvim = nvim -u ($env.HOME | path join '/.config/nvim/lua/rawinit.lua')
 alias v = nvim
 alias pacman = pacman --color=auto
 alias paru = paru --color=auto
 alias bargo = cargo
-alias cargo = cargo mommy
+alias mommy = cargo mommy
 alias diff = diff --color=auto
 alias grep = grep --color=auto
 alias ip = ip --color=auto

@@ -49,4 +49,3 @@ font-size = 12
 background-opacity = 0.80
 theme = MaterialDesignColors
 maximize = true
-command = "~/.cargo/bin/nu"

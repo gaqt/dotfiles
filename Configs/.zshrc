@@ -14,9 +14,7 @@ alias paru='paru --color=auto'
 export EDITOR="nvim"
 export visual="vim"
 alias ls="exa"
-# alias cat="bat"
-# alias car="cat"
-alias cargo="cargo mommy"
+alias mommy="cargo mommy"
 
 alias echo-mic="pactl load-module module-loopback latency_msec=200 source=alsa_input.pci-0000_03_00.6.analog-stereo sink=alsa_output.pci-0000_03_00.6.analog-stereo"
 alias echo-mic-off="pactl unload-module module-loopback"
