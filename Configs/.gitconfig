@@ -1,16 +1,29 @@
 [user]
-	name = atomoxetine
-	email = 132525922+atomoxetine@users.noreply.github.com
+	name = emily
+	email = snri.atomoxetine@proton.me
 	signingkey = ~/.ssh/id_rsa.pub
+[core]
+    editor = nvim
+    pager = diffr | less -R
+[alias]
+    squash-last-n = "!f() { git reset --hard HEAD~$1 && git merge --squash HEAD@{1} && git commit; }; f"
+[interactive]
+    diffFilter = diffr
 [gpg]
 	format = ssh
 [push]
     autoSetupRemote = true
+	followTags = true
 [pull]
 	rebase = true
+[fetch]
+    prune = true
 [commit]
+    template = ~/.gitmessage
 	gpgsign = true
 [tag]
 	gpgsign = true
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
+[init]
+	defaultBranch = main

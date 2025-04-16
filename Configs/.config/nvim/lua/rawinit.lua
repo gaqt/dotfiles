@@ -4,15 +4,18 @@ vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
-vim.opt.wrap = true
+vim.opt.wrap = false
+vim.opt.sidescroll = 10
 vim.opt.breakindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
--- vim.opt.cc = '80'
+vim.opt.cc = '90'
 vim.opt.expandtab = true
 vim.opt.clipboard = 'unnamed'
-vim.opt.cursorline = true
+vim.opt.ignorecase = true
+vim.opt.laststatus = 3
+-- vim.opt.cursorline = true
 
 vim.opt.guicursor = "n-v-c-i:block"
 
@@ -23,6 +26,25 @@ vim.g.netrw_liststyle = 1
 vim.g.netrw_browse_split = 4
 vim.g.netrw_keepdir = 0
 
+-- Navigating
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-f>", "<C-f>zz")
+vim.keymap.set("n", "<C-b>", "<C-b>zz")
+
+-- Editing
+vim.keymap.set("n", "<M-;>", "A;<Escape>o")
+vim.keymap.set("i", "<M-;>", "<Escape>A;<Escape>o")
+vim.keymap.set("n", "<M-,>", "A,<Escape>o")
+vim.keymap.set("i", "<M-,>", "<Escape>A,<Escape>o")
+vim.keymap.set("n", "<M-.>", "o.")
+vim.keymap.set("i", "<M-.>", "<Escape>o.")
+vim.keymap.set("n", "<M-a>", "A")
+vim.keymap.set("i", "<M-a>", "<Escape>A")
+vim.keymap.set("n", "<M-o>", "o")
+vim.keymap.set("i", "<M-o>", "<Escape>o")
+vim.keymap.set("n", "<M-O>", "O")
+vim.keymap.set("i", "<M-O>", "<Escape>O")
 
 -- Keymaps
 vim.g.mapleader = ' '
@@ -37,16 +59,15 @@ vim.keymap.set({'n', 'x'}, 'x', '"_x')
 vim.keymap.set({'n', 'x'}, 'X', '"_d')
 
 -- select all text in current buffer
-vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
+vim.keymap.set('n', '<leader>a', 'ggVG<cr>')
 
 -- netrw
 vim.keymap.set('n', '<leader>e', ':Lexplore!<cr>')
 
--- window manipulation emacs style :sunglasses:
--- vim.keymap.set('n', '<leader>w', '')
-
 -- kill buffer
 vim.keymap.set('n', '<leader>k', ':bd<cr>')
+
+vim.opt.termguicolors = true
 
 local function getColorschemeIdx(colorscheme)
     local colorschemeList = vim.fn.getcompletion("", "color")
@@ -111,7 +132,5 @@ vim.keymap.set('n', '<F3>', function ()
 
     vim.cmd.colorscheme(next)
 end)
-
-vim.opt.termguicolors = true
 
 return {}

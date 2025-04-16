@@ -6,7 +6,7 @@ Install dependencies:
 ```
 
 paru -S --needed nano vim neovim flameshot xorg-server xclip plasma /
-    kde-applications cmake make npm yarn rustup ghostty nerd-fonts /
+    kde-applications cmake make rustup ghostty nerd-fonts /
     python python-pip btop tmux 7zip ffmpeg fzf ripgrep neofetch hyfetch /
     jq openssh zoxide
 
@@ -14,7 +14,9 @@ rustup default stable
 
 cargo instal --locked cargo-binstall
 cargo binstall --locked cargo-mommy bacon yazi-fm yazi-cli starship bat exa /
-    cargo-expand nushell
+    cargo-expand nushell bacon sccache cargo-info diffr
+
+npm i -g bun pnpm sloc yarn
 
 ```
 

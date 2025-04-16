@@ -42,10 +42,48 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-# the quick brown fox jumps over the lazy dog {} [] () => >> -> == != === !== :: && ||
+# Favorites
+#
+# FantasqueSansM
+# RecMonoLinear
+# Iosevka
+# Lilex
+# CaskaydiaCove
+# D2CodingLigature
 
-font-family = "Hasklug Nerd Font"
-font-size = 12
-background-opacity = 0.80
-theme = MaterialDesignColors
+# the quick brown fox jumps over the lazy dog {} [] () => >> -> == != === !== :: && ||
+# 0123456789 !@#$%^&*()
+
+font-family = "FantasqueSansM Nerd Font"
+font-size = 15
+theme = tokyonight_night
+background-opacity = 1
+fullscreen = true
 maximize = true
+
+keybind = ctrl+,=unbind
+
+#
+# # cyberdream theme for ghostty
+# palette = 0=#16181a
+# palette = 1=#ef5e4e
+# palette = 2=#4eef5c
+# palette = 3=#e1ef4e
+# palette = 4=#4e91ef
+# palette = 5=#ad4eef
+# palette = 6=#4ee1ef
+# palette = 7=#efefef
+# palette = 8=#3c4048
+# palette = 9=#ff6e5e
+# palette = 10=#5eff6c
+# palette = 11=#f1ff5e
+# palette = 12=#5ea1ff
+# palette = 13=#bd5eff
+# palette = 14=#5ef1ff
+# palette = 15=#ffffff
+#
+# background = #16181a
+# foreground = #efefef
+# cursor-color = #feb11f
+# selection-background = #3c4048
+# selection-foreground = #bf9fbf
