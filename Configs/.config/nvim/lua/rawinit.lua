@@ -10,12 +10,13 @@ vim.opt.breakindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
-vim.opt.cc = '90'
 vim.opt.expandtab = true
 vim.opt.clipboard = 'unnamed'
 vim.opt.ignorecase = true
 vim.opt.laststatus = 3
 -- vim.opt.cursorline = true
+vim.o.signcolumn = "yes"
+-- vim.o.winborder = "solid"
 
 vim.opt.guicursor = "n-v-c-i:block"
 
@@ -33,17 +34,17 @@ vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
 -- Editing
-vim.keymap.set("n", "<M-;>", "A;<Escape>o")
-vim.keymap.set("i", "<M-;>", "<Escape>A;<Escape>o")
-vim.keymap.set("n", "<M-,>", "A,<Escape>o")
-vim.keymap.set("i", "<M-,>", "<Escape>A,<Escape>o")
-vim.keymap.set("n", "<M-.>", "o.")
-vim.keymap.set("i", "<M-.>", "<Escape>o.")
-vim.keymap.set("n", "<M-a>", "A")
+vim.keymap.set("n", "<M-;>", "A;<Escape>")
+vim.keymap.set("i", "<M-;>", "<Escape>A;")
+vim.keymap.set("n", "<M-,>", "A,<Escape>")
+vim.keymap.set("i", "<M-,>", "<Escape>A,")
+vim.keymap.set("n", "<M-.>", "a.<Escape>")
+vim.keymap.set("i", "<M-.>", "<Escape>a.")
+vim.keymap.set("n", "<M-a>", "A<Escape>")
 vim.keymap.set("i", "<M-a>", "<Escape>A")
-vim.keymap.set("n", "<M-o>", "o")
+vim.keymap.set("n", "<M-o>", "o<Escape>")
 vim.keymap.set("i", "<M-o>", "<Escape>o")
-vim.keymap.set("n", "<M-O>", "O")
+vim.keymap.set("n", "<M-O>", "O<Escape>")
 vim.keymap.set("i", "<M-O>", "<Escape>O")
 
 -- Keymaps
@@ -132,5 +133,14 @@ vim.keymap.set('n', '<F3>', function ()
 
     vim.cmd.colorscheme(next)
 end)
+
+vim.keymap.set('n', '<leader>st', function ()
+    vim.cmd.vnew()
+    vim.cmd.term()
+    vim.cmd.wincmd("J")
+    vim.api.nvim_win_set_height(0, 10)
+end)
+
+vim.keymap.set('t', '<C-;>', '<C-\\><C-n>')
 
 return {}

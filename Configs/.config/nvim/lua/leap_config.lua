@@ -1,6 +1,5 @@
-require('leap').create_default_mappings()
-
-require('leap.user').set_repeat_keys('<enter>', '<backspace>')
+vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)')
+vim.keymap.set('n',             'S', '<Plug>(leap-backward)')
 
 require('flit').setup {}
 require('telepath').use_default_mappings()

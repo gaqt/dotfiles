@@ -5,7 +5,7 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 local lspconfig = require('lspconfig')
 
-function reload_mason_lspconfig()
+local function reload_mason_lspconfig()
     require('mason-lspconfig').setup_handlers {
         function(server)
             require('lspconfig')[server].setup {
@@ -111,7 +111,6 @@ reload_mason_lspconfig()
 vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_prev)
 vim.keymap.set('n', '<leader>m', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -134,18 +133,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
         vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<leader>fo', function()
+        vim.keymap.set('n', '<leader>f', function()
             vim.lsp.buf.format { async = true }
         end, opts)
     end
 })
-
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover,
-    { border = 'double' }
-)
-
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-    vim.lsp.handlers.signature_help,
-    { border = 'double' }
-)

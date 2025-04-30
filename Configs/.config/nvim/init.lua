@@ -13,6 +13,18 @@ require('tabs_config')
 require('harpoon_config')
 require('snippets_config')
 require('leap_config')
+require('dap_config')
+require('spectre_config')
+
+-- Disable Copilot
+vim.cmd("Copilot disable")
 
 -- colorscheme
-vim.cmd.colorscheme 'tokyonight-night'
+
+-- vim.cmd.colorscheme 'tokyodark'
+-- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#202030', fg = "#f0f0f0" })
+-- vim.api.nvim_set_hl(0, 'FLoatBorder', { bg = '#202030', fg = "#f0f0f0" })
+
+vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_better_performance = 1
+vim.cmd.colorscheme 'gruvbox-material'

@@ -12,10 +12,11 @@ sign({ name = 'DiagnosticSignHint', text = '' })
 sign({ name = 'DiagnosticSignInfo', text = '' })
 
 vim.diagnostic.config({
+    update_in_insert = true,
     virtual_text = true,
     severity_sort = true,
     float = {
-        border = 'double', -- values are: none, single, double, rounded, solid, shadow
+        -- border = 'rounded', -- values are: none, single, double, rounded, solid, shadow
         source = 'always',
     },
 })

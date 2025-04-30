@@ -9,7 +9,7 @@ bufferline.setup {
             reveal = { 'close' }
         },
         numbers = "ordinal",
-        separator_style = "slope",
+        separator_style = {'|', '|'},
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level)
             local icon = level:match("error") and " " or ""
