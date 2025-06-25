@@ -1,20 +1,21 @@
+[general]
 live_config_reload = true
+
 import = [
-    "~/.config/alacritty/themes/themes/nightfox.toml"
+    "~/.config/alacritty/themes/ayu_dark.toml"
 ]
 
 [window]
-  opacity = 0.95
-  blur = false
+  opacity = 0.85
   dynamic_padding = true
 
 [font]
-  normal = { family = "Hack Nerd Font", style = "Regular" }
-  size = 14
+  normal = { family = "Lilex Nerd Font", style = "Regular" }
+  size = 11
 
 [colors]
-  cursor = { text = "#121212", cursor = "#df90ff" }
-  vi_mode_cursor = { text = "#121212", cursor = "#af30ff" }
+  cursor = { text = "#121212", cursor = "#30ff30" }
+  vi_mode_cursor = { text = "#121212", cursor = "#00cf00" }
   transparent_background_colors = true
 
 [cursor]

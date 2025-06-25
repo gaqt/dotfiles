@@ -1,13 +1,1 @@
-# setxkbmap -layout br -variant nodeadkeys
-# setxkbmap -option compose:caps
-# setxkbmap -option compose:ralt
-# setxkbmap -option caps:swapescape
-# xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
-# xset r rate 200 50
-
-# dunst &
-flameshot &
-
-export TERMINAL="alacritty"
-
-# source $HOME/.localconfigs
+xrdb -merge $HOME/.Xresources

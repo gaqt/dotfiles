@@ -10,7 +10,7 @@ function lazy.install(path)
       'git', 'clone',
       '--filter=blob:none',
       'https://github.com/folke/lazy.nvim.git',
-      '--branch=stable',   -- latest stable release
+      '--branch=stable', -- latest stable release
       path,
    })
 end
@@ -44,7 +44,7 @@ lazy.setup({
    -- { 'tpope/vim-surround' },
    {
       "kylechui/nvim-surround",
-      version = "^3.0.0",   -- Use for stability; omit to use `main` branch for the latest features
+      version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
       event = "VeryLazy",
       config = function()
          require("nvim-surround").setup({
@@ -60,7 +60,7 @@ lazy.setup({
       opts = {},
       -- Optional dependencies
       -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
-      dependencies = { "nvim-tree/nvim-web-devicons" },   -- use if you prefer nvim-web-devicons
+      dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
       -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
       lazy = false,
    },
@@ -72,11 +72,11 @@ lazy.setup({
    {
       "NeogitOrg/neogit",
       dependencies = {
-         "nvim-lua/plenary.nvim",     -- required
-         "sindrets/diffview.nvim",    -- optional - Diff integration
+         "nvim-lua/plenary.nvim",  -- required
+         "sindrets/diffview.nvim", -- optional - Diff integration
 
          -- Only one of these is needed.
-         "nvim-telescope/telescope.nvim",    -- optional
+         "nvim-telescope/telescope.nvim", -- optional
          -- "ibhagwan/fzf-lua",      -- optional
          -- "echasnovski/mini.pick", -- optional
       },
@@ -167,6 +167,17 @@ lazy.setup({
       }
    },
    {
+      "forest-nvim/sequoia.nvim",
+      lazy = false,
+      priority = 1000,
+   },
+   { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+   {
+      'maxmx03/solarized.nvim',
+      lazy = false,
+      priority = 1000,
+   },
+   {
       "ellisonleao/gruvbox.nvim",
       priority = 1000,
       config = true,
@@ -176,19 +187,8 @@ lazy.setup({
    { 'sainnhe/gruvbox-material' },
    { 'luisiacc/gruvbox-baby' },
    { "folke/tokyonight.nvim" },
-   {
-      'maxmx03/fluoromachine.nvim',
-      config = function()
-         local fm = require 'fluoromachine'
-
-         fm.setup {
-            glow = false,
-            brightness = 0,
-            theme = 'fluoromachine',
-            transparent = false,
-         }
-      end
-   },
+   { 'maxmx03/fluoromachine.nvim' },
+   { 'NLKNguyen/papercolor-theme' },
    { 'sainnhe/everforest' },
    {
       "scottmckendry/cyberdream.nvim",
@@ -231,7 +231,7 @@ lazy.setup({
    },
    {
       "folke/trouble.nvim",
-      opts = {},   -- for default options, refer to the configuration section for custom setup.
+      opts = {}, -- for default options, refer to the configuration section for custom setup.
       cmd = "Trouble",
       keys = {
          {

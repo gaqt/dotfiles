@@ -25,6 +25,22 @@ vim.cmd("Copilot disable")
 -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#202030', fg = "#f0f0f0" })
 -- vim.api.nvim_set_hl(0, 'FLoatBorder', { bg = '#202030', fg = "#f0f0f0" })
 
-vim.g.gruvbox_material_background = 'hard'
-vim.g.gruvbox_material_better_performance = 1
-vim.cmd.colorscheme 'gruvbox-material'
+-- vim.g.gruvbox_material_background = 'hard'
+-- vim.g.gruvbox_material_better_performance = 1
+-- vim.cmd.colorscheme 'gruvbox-material'
+
+-- require('solarized').setup({ variant = "summer", transparent = { enabled = true } })
+-- vim.cmd.colorscheme 'solarized'
+
+vim.g.moonflyTransparent = true
+vim.cmd.colorscheme 'moonfly'
+
+-- require('fluoromachine').setup {
+--    glow = false,
+--    theme = 'delta',
+--    transparent = true,
+-- }
+-- vim.cmd.colorscheme 'fluoromachine'
+
+-- vim.cmd.let "g:PaperColor_Theme_Options = {'theme': {'default.dark': {'transparent_background': 1}}}"
+-- vim.cmd.colorscheme 'PaperColor'
