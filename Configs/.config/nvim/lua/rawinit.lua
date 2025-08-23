@@ -16,7 +16,7 @@ vim.opt.ignorecase = true
 vim.opt.laststatus = 3
 -- vim.opt.cursorline = true
 vim.o.signcolumn = "yes"
--- vim.o.winborder = "solid"
+vim.o.winborder = "rounded"
 
 vim.opt.guicursor = "n-v-c-i:block"
 

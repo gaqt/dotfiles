@@ -32,15 +32,16 @@ vim.cmd("Copilot disable")
 -- require('solarized').setup({ variant = "summer", transparent = { enabled = true } })
 -- vim.cmd.colorscheme 'solarized'
 
-vim.g.moonflyTransparent = true
-vim.cmd.colorscheme 'moonfly'
-
 -- require('fluoromachine').setup {
 --    glow = false,
 --    theme = 'delta',
---    transparent = true,
+--    transparent = false,
 -- }
 -- vim.cmd.colorscheme 'fluoromachine'
 
--- vim.cmd.let "g:PaperColor_Theme_Options = {'theme': {'default.dark': {'transparent_background': 1}}}"
--- vim.cmd.colorscheme 'PaperColor'
+-- require('silkcircuit').setup {
+--    variant = 'soft'
+-- }
+-- vim.cmd.colorscheme "silkcircuit"
+
+vim.cmd.colorscheme "amora"

@@ -24,10 +24,10 @@ cmp.setup({
         { name = 'nvim_lsp', priority = 500, keyword_length = 3 },
         -- { name = 'buffer',  priority = 200, keyword_length = 3 },
     },
-    -- window = {
-    --     completion = cmp.config.window.bordered(),
-    --     documentation = cmp.config.window.bordered(),
-    -- },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
     formatting = {
         fields = { 'menu', 'abbr', 'kind' },
         format = function(entry, item)

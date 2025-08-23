@@ -188,6 +188,11 @@ lazy.setup({
    { 'luisiacc/gruvbox-baby' },
    { "folke/tokyonight.nvim" },
    { 'maxmx03/fluoromachine.nvim' },
+   {
+      "hyperb1iss/silkcircuit-nvim",
+      lazy = false
+   },
+   { 'owozsh/amora' },
    { 'NLKNguyen/papercolor-theme' },
    { 'sainnhe/everforest' },
    {
@@ -354,16 +359,6 @@ lazy.setup({
       dependencies = { 'ggandor/leap.nvim' }
    },
    {
-      'rasulomaroff/telepath.nvim',
-      dependencies = 'ggandor/leap.nvim',
-      -- there's no sence in using lazy loading since telepath won't load the main module
-      -- until you actually use mappings
-      lazy = false,
-      config = function()
-         require('telepath').use_default_mappings()
-      end
-   },
-   {
       'windwp/nvim-ts-autotag',
       lazy = false,
       config = function()
@@ -378,13 +373,7 @@ lazy.setup({
          vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
       end
    },
-   { 'ThePrimeagen/vim-be-good' },
    { 'mfussenegger/nvim-dap' },
-   -- {
-   --    "m4xshen/hardtime.nvim",
-   --    dependencies = { "MunifTanjim/nui.nvim" },
-   --    opts = {}
-   -- },
    -- { "potamides/pantran.nvim" }
    -- {
    --     "yetone/avante.nvim",
