@@ -1,3 +1,5 @@
 brace_style = "PreferSameLine"
 enum_discrim_align_threshold = 30
 max_width = 80
+indent_style = "Visual"
+tab_spaces = 3

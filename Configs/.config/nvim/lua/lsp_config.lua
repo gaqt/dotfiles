@@ -2,53 +2,43 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('mason').setup()
-require('mason-lspconfig').setup()
-local lspconfig = require('lspconfig')
+require('mason-lspconfig').setup {
+   ensure_installed = { 'cssls', 'html' }
+}
 
-local function reload_mason_lspconfig()
-    require('mason-lspconfig').setup_handlers {
-        function(server)
-            require('lspconfig')[server].setup {
-                capabilities = capabilities,
-            }
-        end,
+-- lspconfig.lua_ls.setup {
+--                 capabilities = capabilities,
+--                 on_init = function(client)
+--                     local path = client.workspace_folders[1].name
+--                     if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+--                         client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+--                             Lua = {
+--                                 runtime = {
+--                                     -- Tell the language server which version of Lua you're using
+--                                     -- (most likely LuaJIT in the case of Neovim)
+--                                     version = 'LuaJIT'
+--                                 },
+--                                 -- Make the server aware of Neovim runtime files
+--                                 workspace = {
+--                                     checkThirdParty = false,
+--                                     library = {
+--                                         vim.env.VIMRUNTIME
+--                                         -- "${3rd}/luv/library"
+--                                         -- "${3rd}/busted/library",
+--                                     }
+--                                     -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+--                                     -- library = vim.api.nvim_get_runtime_file("", true)
+--                                 }
+--                             }
+--                         })
+--
+--                         client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+--                     end
+--                     return true
+--                 end
+-- }
 
-        ['lua_ls'] = function()
-            lspconfig.lua_ls.setup {
-                capabilities = capabilities,
-                on_init = function(client)
-                    local path = client.workspace_folders[1].name
-                    if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-                        client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
-                            Lua = {
-                                runtime = {
-                                    -- Tell the language server which version of Lua you're using
-                                    -- (most likely LuaJIT in the case of Neovim)
-                                    version = 'LuaJIT'
-                                },
-                                -- Make the server aware of Neovim runtime files
-                                workspace = {
-                                    checkThirdParty = false,
-                                    library = {
-                                        vim.env.VIMRUNTIME
-                                        -- "${3rd}/luv/library"
-                                        -- "${3rd}/busted/library",
-                                    }
-                                    -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-                                    -- library = vim.api.nvim_get_runtime_file("", true)
-                                }
-                            }
-                        })
-
-                        client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-                    end
-                    return true
-                end
-            }
-        end,
-
-        ['rust_analyzer'] = function()
-            lspconfig.rust_analyzer.setup {
+vim.lsp.config('rust-analyzer', {
                 settings = {
                     ["rust-analyzer"] = {
                         imports = {
@@ -77,36 +67,32 @@ local function reload_mason_lspconfig()
                         }
                     }
                 }
-            }
-        end,
+})
 
-        ['jinja_lsp'] = function()
-            lspconfig.jinja_lsp.setup {
-                filetypes = { 'html', 'htmldjango', 'templ' }
-            }
-        end,
+vim.lsp.config('jinja_lsp', {
+    filetypes = { 'html', 'htmldjango', 'templ' }
+})
 
-        ['htmx'] = function()
-            lspconfig.htmx.setup {
-                filetypes = { 'html', 'htmldjango', 'templ' }
-            }
-        end,
+vim.lsp.config('htmx', {
+    filetypes = { 'html', 'htmldjango', 'templ' }
+})
 
-        ['html'] = function()
-            lspconfig.html.setup {
-                filetypes = { 'html', 'htmldjango', 'templ' }
-            }
-        end,
+vim.lsp.config("html", {
+    filetypes = { 'html', 'htmldjango', 'templ' }
+})
 
-        ['emmet_language_server'] = function()
-            lspconfig.emmet_language_server.setup {
-                filetypes = { 'html', 'htmldjango', 'templ', 'typescriptreact', 'erb' }
-            }
-        end,
-    }
-end
+vim.lsp.config('emmet_language_server', {
+    filetypes = { 'html', 'htmldjango', 'templ', 'typescriptreact', 'erb' }
+})
 
-reload_mason_lspconfig()
+vim.lsp.enable("emmylua_ls")
+vim.lsp.enable("clangd")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("htmx")
+vim.lsp.enable("emmet_language_server")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("jinja_lsp")
+
 
 vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>n', vim.diagnostic.goto_prev)
@@ -129,7 +115,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<leader>tl', function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, opts)
-        -- vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, opts)
+        vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, opts)
         vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
         vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)

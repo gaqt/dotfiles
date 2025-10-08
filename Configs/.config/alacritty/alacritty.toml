@@ -2,20 +2,20 @@
 live_config_reload = true
 
 import = [
-    "~/.config/alacritty/themes/ayu_dark.toml"
+    "~/.config/alacritty/hardhacker.toml"
 ]
 
 [window]
-  opacity = 0.85
+  opacity = 0.97
   dynamic_padding = true
 
 [font]
-  normal = { family = "Lilex Nerd Font", style = "Regular" }
-  size = 11
+  normal = { family = "DepartureMono Nerd Font", style = "Regular" }
+  size = 16.5
 
 [colors]
-  cursor = { text = "#121212", cursor = "#30ff30" }
-  vi_mode_cursor = { text = "#121212", cursor = "#00cf00" }
+  cursor = { text = "#121212", cursor = "#f00fa0" }
+  vi_mode_cursor = { text = "#121212", cursor = "#b00fc0" }
   transparent_background_colors = true
 
 [cursor]

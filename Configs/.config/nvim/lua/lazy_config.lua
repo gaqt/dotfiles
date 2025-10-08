@@ -41,7 +41,6 @@ lazy.setup({
          require("Comment").setup()
       end
    },
-   -- { 'tpope/vim-surround' },
    {
       "kylechui/nvim-surround",
       version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
@@ -68,20 +67,7 @@ lazy.setup({
    { 'nvim-lua/plenary.nvim' },
    { 'nvim-telescope/telescope.nvim' },
    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
-   -- { 'tpope/vim-fugitive' },
-   {
-      "NeogitOrg/neogit",
-      dependencies = {
-         "nvim-lua/plenary.nvim",  -- required
-         "sindrets/diffview.nvim", -- optional - Diff integration
-
-         -- Only one of these is needed.
-         "nvim-telescope/telescope.nvim", -- optional
-         -- "ibhagwan/fzf-lua",      -- optional
-         -- "echasnovski/mini.pick", -- optional
-      },
-      config = true
-   },
+   { 'tpope/vim-fugitive' },
    {
       'lewis6991/gitsigns.nvim',
       config = function()
@@ -158,58 +144,12 @@ lazy.setup({
          require 'colorizer'.setup()
       end
    },
-   {
-      "tiagovla/tokyodark.nvim",
-      lazy = false,
-      priority = 1000,
-      opts = {
-         gamma = 1.0
-      }
-   },
-   {
-      "forest-nvim/sequoia.nvim",
-      lazy = false,
-      priority = 1000,
-   },
-   { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
-   {
-      'maxmx03/solarized.nvim',
-      lazy = false,
-      priority = 1000,
-   },
-   {
-      "ellisonleao/gruvbox.nvim",
-      priority = 1000,
-      config = true,
-      opts =
-      { contrast = "soft" }
-   },
-   { 'sainnhe/gruvbox-material' },
-   { 'luisiacc/gruvbox-baby' },
-   { "folke/tokyonight.nvim" },
+   { "EdenEast/nightfox.nvim" },
    { 'maxmx03/fluoromachine.nvim' },
-   {
-      "hyperb1iss/silkcircuit-nvim",
-      lazy = false
-   },
-   { 'owozsh/amora' },
+   { 'sheerun/vim-polyglot' },
+   { 'nyoom-engineering/oxocarbon.nvim' },
    { 'NLKNguyen/papercolor-theme' },
    { 'sainnhe/everforest' },
-   {
-      "scottmckendry/cyberdream.nvim",
-      config = function()
-         require('cyberdream').setup {
-            transparent = false,
-            italic_comments = true,
-            saturation = 0.9,
-            highlights = {
-               Define = { fg = "#5ef1ff", italic = true },
-               Keyword = { fg = "#ffbd5e", italic = true }
-            }
-         }
-      end
-   },
-   { "rose-pine/neovim",        name = "rose-pine" },
    { 'akinsho/bufferline.nvim', version = "*",     dependencies = 'nvim-tree/nvim-web-devicons' },
    {
       "iamcco/markdown-preview.nvim",
@@ -278,18 +218,6 @@ lazy.setup({
          require('todo-comments').setup {}
       end
    },
-   -- {
-   --     'nvim-orgmode/orgmode',
-   --     event = 'VeryLazy',
-   --     ft = { 'org' },
-   --     config = function()
-   --         -- Setup orgmode
-   --         require('orgmode').setup({
-   --             org_agenda_files = '~/orgfiles/**/*',
-   --             org_default_notes_file = '~/orgfiles/refile.org',
-   --         })
-   --     end,
-   -- },
    {
       "j-hui/fidget.nvim",
       config = function()
@@ -333,7 +261,6 @@ lazy.setup({
       'nvim-pack/nvim-spectre',
       dependencies = { 'nvim-lua/plenary.nvim' }
    },
-   -- { 'xiyaowong/transparent.nvim', lazy = false },
    { 'RRethy/vim-illuminate' },
    { 'jghauser/mkdir.nvim' },
    {
@@ -355,10 +282,6 @@ lazy.setup({
    },
    { 'tpope/vim-sensible' },
    {
-      'ggandor/flit.nvim',
-      dependencies = { 'ggandor/leap.nvim' }
-   },
-   {
       'windwp/nvim-ts-autotag',
       lazy = false,
       config = function()
@@ -374,38 +297,4 @@ lazy.setup({
       end
    },
    { 'mfussenegger/nvim-dap' },
-   -- { "potamides/pantran.nvim" }
-   -- {
-   --     "yetone/avante.nvim",
-   --     event = "VeryLazy",
-   --     version = false, -- Never set this value to "*"! Never!
-   --     opts = {
-   --         -- add any opts here
-   --         -- for example
-   --         provider = "openai",
-   --         openai = {
-   --             endpoint = "https://api.openai.com/v1",
-   --             model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
-   --             timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-   --             temperature = 0,
-   --             max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-   --             --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-   --         },
-   --     },
-   --     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-   --     build = "make",
-   --     -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-   --     dependencies = {
-   --         "nvim-treesitter/nvim-treesitter",
-   --         "stevearc/dressing.nvim",
-   --         "nvim-lua/plenary.nvim",
-   --         "MunifTanjim/nui.nvim",
-   --         --- The below dependencies are optional,
-   --         "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-   --         "hrsh7th/nvim-cmp",      -- autocompletion for avante commands and mentions
-   --         "ibhagwan/fzf-lua",      -- for file_selector provider fzf
-   --         "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-   --         "zbirenbaum/copilot.lua", -- for providers='copilot'
-   --     },
-   -- }
 })

@@ -1,14 +1,24 @@
 format = """
-$username\
+[<--|](blue) $username\
 $hostname\
 $directory\
 $git_branch\
 $git_state\
 $git_status\
 $cmd_duration\
+$python[|-->](blue)\
 $line_break\
-$python\
 $character"""
+
+[hostname]
+ssh_only = false
+style = "5"
+
+[username]
+show_always = true
+style_root = "yellow"
+style_user = "cyan"
+format = "[$user]($style)[@](bright-blue)"
 
 [directory]
 style = "blue"
@@ -19,13 +29,13 @@ style = "blue"
 # vimcmd_symbol = "[❮](green)"
 
 [character]
-success_symbol = "[\\$](purple)"
-error_symbol = "[\\$](red)"
-vimcmd_symbol = "[\\$](green)"
+success_symbol = " [->](cyan)"
+error_symbol = " [->](red)"
+vimcmd_symbol = " [->](green)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "bright-black"
+style = "13"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
@@ -39,13 +49,13 @@ deleted = "X"
 stashed = "≡"
 
 [git_state]
-format = '\([$state($progress_current/$progress_total)]($style)\) '
+format = '\([$state($progress_current/$progress_total)]($style)\)'
 style = "bright-black"
 
 [cmd_duration]
-format = "[$duration]($style) "
+format = "[$duration]($style)"
 style = "yellow"
 
 [python]
-format = "[$virtualenv]($style) "
+format = "[$virtualenv]($style)"
 style = "bright-black"

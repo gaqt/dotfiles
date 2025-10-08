@@ -17,6 +17,7 @@ vim.opt.laststatus = 3
 -- vim.opt.cursorline = true
 vim.o.signcolumn = "yes"
 vim.o.winborder = "rounded"
+vim.opt.termguicolors = true
 
 vim.opt.guicursor = "n-v-c-i:block"
 
@@ -46,6 +47,11 @@ vim.keymap.set("n", "<M-o>", "o<Escape>")
 vim.keymap.set("i", "<M-o>", "<Escape>o")
 vim.keymap.set("n", "<M-O>", "O<Escape>")
 vim.keymap.set("i", "<M-O>", "<Escape>O")
+vim.keymap.set("i", "<C-l>", "<C-o>l")
+vim.keymap.set("i", "<C-h>", "<C-o>h")
+vim.keymap.set("i", "<C-j>", "<C-o>j")
+vim.keymap.set("i", "<C-k>", "<C-o>k")
+vim.keymap.set("i", "<C-Backspace>", "<Escape>dbxi")
 
 -- Keymaps
 vim.g.mapleader = ' '
@@ -67,8 +73,6 @@ vim.keymap.set('n', '<leader>e', ':Lexplore!<cr>')
 
 -- kill buffer
 vim.keymap.set('n', '<leader>k', ':bd<cr>')
-
-vim.opt.termguicolors = true
 
 local function getColorschemeIdx(colorscheme)
     local colorschemeList = vim.fn.getcompletion("", "color")

@@ -19,7 +19,7 @@ alias cd="z"
 export LANG="en_GB.UTF-8"
 export LC_ALL="en_GB.UTF-8"
 
-export RUSTC_WRAPPER="$(which sccache)"
+# export RUSTC_WRAPPER="$(which sccache)"
 
 eval "$(zoxide init zsh)"
 
@@ -45,19 +45,9 @@ if [[ -o interactive ]]; then
     # shell is interactive
     # hyfetch
 
-    green=$(tput setaf 2)
-    white=$(tput setaf 7)
-    echo -e "${green}Welcome :3${green}"
+    color=$(tput setaf 4)
+    echo -e "${color}Welcome :3${color}"
 fi
-
-function y() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
-    fi
-    rm -f -- "$tmp"
-}
 
 
 # bun completions

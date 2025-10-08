@@ -69,15 +69,15 @@ cmp.setup({
             })
         end, { 'i', 's' }),
 
-        ['<C-j>'] = cmp.mapping(function()
-            cmp.complete({
-                config = {
-                    sources = {
-                        { name = 'copilot' },
-                    }
-                }
-            })
-        end, { 'i', 's' }),
+        -- ['<C-j>'] = cmp.mapping(function()
+        --     cmp.complete({
+        --         config = {
+        --             sources = {
+        --                 { name = 'copilot' },
+        --             }
+        --         }
+        --     })
+        -- end, { 'i', 's' }),
 
         ["<Tab>"] = cmp.mapping(function(fallback)
             if luasnip.locally_jumpable(1) then
@@ -95,20 +95,20 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        ["<C-l>"] = cmp.mapping(function(fallback)
-            if luasnip.choice_active() then
-                luasnip.change_choice(1)
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-
-        ["<C-h>"] = cmp.mapping(function(fallback)
-            if luasnip.choice_active() then
-                luasnip.change_choice(1)
-            else
-                fallback()
-            end
-        end, { "i", "s" })
+        -- ["<C-l>"] = cmp.mapping(function(fallback)
+        --     if luasnip.choice_active() then
+        --         luasnip.change_choice(1)
+        --     else
+        --         fallback()
+        --     end
+        -- end, { "i", "s" }),
+        --
+        -- ["<C-h>"] = cmp.mapping(function(fallback)
+        --     if luasnip.choice_active() then
+        --         luasnip.change_choice(1)
+        --     else
+        --         fallback()
+        --     end
+        -- end, { "i", "s" })
     },
 })

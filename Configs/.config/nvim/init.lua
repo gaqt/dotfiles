@@ -12,7 +12,6 @@ require('diagnostic_config')
 require('tabs_config')
 require('harpoon_config')
 require('snippets_config')
-require('leap_config')
 require('dap_config')
 require('spectre_config')
 
@@ -21,27 +20,21 @@ vim.cmd("Copilot disable")
 
 -- colorscheme
 
--- vim.cmd.colorscheme 'tokyodark'
--- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#202030', fg = "#f0f0f0" })
--- vim.api.nvim_set_hl(0, 'FLoatBorder', { bg = '#202030', fg = "#f0f0f0" })
-
--- vim.g.gruvbox_material_background = 'hard'
--- vim.g.gruvbox_material_better_performance = 1
--- vim.cmd.colorscheme 'gruvbox-material'
-
--- require('solarized').setup({ variant = "summer", transparent = { enabled = true } })
--- vim.cmd.colorscheme 'solarized'
-
 -- require('fluoromachine').setup {
 --    glow = false,
 --    theme = 'delta',
---    transparent = false,
+--    transparent = true,
 -- }
 -- vim.cmd.colorscheme 'fluoromachine'
+-- vim.api.nvim_set_hl(0, 'Visual', { bg = "#bf107f", fg = "#ffffff" });
 
--- require('silkcircuit').setup {
---    variant = 'soft'
--- }
--- vim.cmd.colorscheme "silkcircuit"
+-- require('nightfox').setup({
+--    options = {
+--       transparent = true
+--    }
+-- })
+-- vim.cmd.colorscheme "nightfox"
 
-vim.cmd.colorscheme "amora"
+vim.cmd.colorscheme "oxocarbon"
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
