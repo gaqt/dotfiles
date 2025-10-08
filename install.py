@@ -86,17 +86,13 @@ def main():
             return
 
     try:
-        # backupTopic("Assets")
         backupTopic("Configs")
-        backupTopic("Scripts")
     except Exception as err:
         print("Error ocurred while backing up, aborting..")
         raise err
 
     try:
-        # installTopic("Assets")
         installTopic("Configs")
-        installTopic("Scripts")
     except Exception as err:
         print("Error occured while installing rice, aborting..")
         raise err

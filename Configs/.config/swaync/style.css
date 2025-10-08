@@ -1,0 +1,36 @@
+* {
+  font-family: "DepartureMono Nerd Font";
+  color: #ff3080;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.control-center {
+  background-color: rgba(20,0,20,0.9);
+  border: 5px solid;
+  border-color: rgba(36, 150, 255, 0.85);
+}
+
+.widget-volume,.widget-backlight {
+  border: 2px solid;
+  border-color: rgba(36, 150, 255, 0.85);
+}
+
+.notification {
+  background-color: rgba(20,0,20,0.9);
+  border-width: 2px;
+  border-color: rgba(36, 150, 255, 0.85);
+  padding: 6px;
+}
+
+.close-button {
+  background-color: transparent;
+  text-shadow: none;
+}
+
+.close-button:hover {
+  text-shadow: none;
+  background-color: rgba(40,0,40,0.9);
+}
+

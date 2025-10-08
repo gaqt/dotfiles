@@ -1,0 +1,266 @@
+00:43:12.626: Platform: Wayland
+00:43:12.626: CPU Name: AMD Ryzen 5 5625U with Radeon Graphics
+00:43:12.626: CPU Speed: 3144.210MHz
+00:43:12.627: Physical Cores: 6, Logical Cores: 12
+00:43:12.627: Physical Memory: 15385MB Total, 6360MB Free
+00:43:12.627: Kernel Version: Linux 6.12.42
+00:43:12.627: Distribution: NixOS "25.05"
+00:43:12.627: Desktop Environment: Hyprland (Hyprland)
+00:43:12.627: Session Type: wayland
+00:43:12.638: Qt Version: 6.9.1 (runtime), 6.9.1 (compiled)
+00:43:12.638: Portable mode: false
+00:43:12.756: OBS 31.0.4 (linux)
+00:43:12.760: ---------------------------------
+00:43:12.763: ---------------------------------
+00:43:12.764: audio settings reset:
+00:43:12.764: 	samples per sec: 48000
+00:43:12.764: 	speakers:        2
+00:43:12.764: 	max buffering:   960 milliseconds
+00:43:12.764: 	buffering type:  dynamically increasing
+00:43:12.768: ---------------------------------
+00:43:12.768: Initializing OpenGL...
+00:43:12.768: Using EGL/Wayland
+00:43:12.928: Initialized EGL 1.5
+00:43:13.002: Loading up OpenGL on adapter AMD AMD Radeon Graphics (radeonsi, renoir, ACO, DRM 3.61, 6.12.42)
+00:43:13.002: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 25.0.7, shading language 4.60
+00:43:13.074: ---------------------------------
+00:43:13.074: video settings reset:
+00:43:13.074: 	base resolution:   1920x1080
+00:43:13.074: 	output resolution: 1920x1080
+00:43:13.074: 	downscale filter:  Bicubic
+00:43:13.074: 	fps:               60/1
+00:43:13.074: 	format:            NV12
+00:43:13.074: 	YUV mode:          Rec. 709/Partial
+00:43:13.074: NV12 texture support enabled
+00:43:13.074: P010 texture support not available
+00:43:13.089: Audio monitoring device:
+00:43:13.089: 	name: Default
+00:43:13.089: 	id: default
+00:43:13.090: ---------------------------------
+00:43:13.116: Failed to load 'en-US' text for module: 'decklink-captions.so'
+00:43:13.143: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+00:43:13.174: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+00:43:13.174: Failed to initialize module 'decklink.so'
+00:43:14.012: [pipewire] Available capture sources:
+00:43:14.012: [pipewire]     - Monitor source
+00:43:14.012: [pipewire]     - Window source
+00:43:14.057: v4l2loopback not installed, virtual camera not registered
+00:43:14.078: [obs-browser]: Version 2.24.6
+00:43:14.078: [obs-browser]: CEF Version 127.0.6533.120 (runtime), 127.3.5+g114ea2a+chromium-127.0.6533.120 (compiled)
+00:43:14.116: VAAPI: API version 1.22
+00:43:14.117: FFmpeg VAAPI H264 encoding supported
+00:43:14.125: FFmpeg VAAPI AV1 encoding not supported
+00:43:14.133: FFmpeg VAAPI HEVC encoding supported
+00:43:14.198: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+00:43:14.198: 
+00:43:14.198: NVENC not supported
+00:43:14.198: Failed to initialize module 'obs-nvenc.so'
+00:43:14.382: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.5.6 | RPC Version: 1)
+00:43:14.382: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.9.1 | Qt version (run-time): 6.9.1
+00:43:14.382: [obs-websocket] [obs_module_load] Linked ASIO Version: 102400
+00:43:14.382: DEPRECATION: obs_frontend_get_global_config is deprecated. Read from global or user configuration explicitly instead.
+00:43:14.390: [obs-websocket] [obs_module_load] Module loaded.
+00:43:14.467: [vlc-video]: VLC 3.0.21 Vetinari found, VLC video source enabled
+00:43:14.467: ---------------------------------
+00:43:14.467:   Loaded Modules:
+00:43:14.467:     vlc-video.so
+00:43:14.467:     text-freetype2.so
+00:43:14.467:     rtmp-services.so
+00:43:14.467:     obs-x264.so
+00:43:14.467:     obs-websocket.so
+00:43:14.467:     obs-webrtc.so
+00:43:14.467:     obs-vst.so
+00:43:14.467:     obs-transitions.so
+00:43:14.467:     obs-qsv11.so
+00:43:14.467:     obs-outputs.so
+00:43:14.467:     obs-libfdk.so
+00:43:14.467:     obs-filters.so
+00:43:14.467:     obs-ffmpeg.so
+00:43:14.467:     obs-browser.so
+00:43:14.467:     linux-v4l2.so
+00:43:14.467:     linux-pulseaudio.so
+00:43:14.467:     linux-pipewire.so
+00:43:14.467:     linux-jack.so
+00:43:14.467:     linux-capture.so
+00:43:14.467:     linux-alsa.so
+00:43:14.467:     image-source.so
+00:43:14.467:     frontend-tools.so
+00:43:14.467:     decklink-output-ui.so
+00:43:14.467:     decklink-captions.so
+00:43:14.467: ---------------------------------
+00:43:14.468: ---------------------------------
+00:43:14.468: Available Encoders:
+00:43:14.468:   Video Encoders:
+00:43:14.468: 	- ffmpeg_svt_av1 (SVT-AV1)
+00:43:14.468: 	- ffmpeg_aom_av1 (AOM AV1)
+00:43:14.468: 	- ffmpeg_vaapi_tex (FFmpeg VAAPI H.264)
+00:43:14.468: 	- hevc_ffmpeg_vaapi_tex (FFmpeg VAAPI HEVC)
+00:43:14.468: 	- obs_x264 (x264)
+00:43:14.468:   Audio Encoders:
+00:43:14.468: 	- ffmpeg_aac (FFmpeg AAC)
+00:43:14.468: 	- ffmpeg_opus (FFmpeg Opus)
+00:43:14.468: 	- ffmpeg_pcm_s16le (FFmpeg PCM (16-bit))
+00:43:14.468: 	- ffmpeg_pcm_s24le (FFmpeg PCM (24-bit))
+00:43:14.468: 	- ffmpeg_pcm_f32le (FFmpeg PCM (32-bit float))
+00:43:14.468: 	- ffmpeg_alac (FFmpeg ALAC (24-bit))
+00:43:14.468: 	- ffmpeg_flac (FFmpeg FLAC (16-bit))
+00:43:14.468: 	- libfdk_aac (libfdk AAC)
+00:43:14.468: ==== Startup complete ===============================================
+00:43:14.516: All scene data cleared
+00:43:14.516: ------------------------------------------------
+00:43:14.523: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.7) 15.0.0'
+00:43:14.523: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+00:43:14.523: pulse-input: Started recording from 'alsa_output.pci-0000_03_00.6.analog-stereo.monitor' (default)
+00:43:14.523: [Loaded global audio device]: 'Desktop Audio'
+00:43:14.524: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.7) 15.0.0'
+00:43:14.524: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+00:43:14.524: pulse-input: Started recording from 'alsa_input.pci-0000_03_00.6.analog-stereo' (default)
+00:43:14.524: [Loaded global audio device]: 'Mic/Aux'
+00:43:14.525: PipeWire initialized
+00:43:14.526: Switched to scene 'Scene'
+00:43:14.527: ------------------------------------------------
+00:43:14.527: Loaded scenes:
+00:43:14.527: - scene 'Scene':
+00:43:14.527:     - source: 'Screen Capture (PipeWire)' (pipewire-screen-capture-source)
+00:43:14.527: ------------------------------------------------
+00:43:14.705: [pipewire] Screencast session created
+00:43:15.089: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Desktop Audio)
+00:43:15.089: 
+00:43:18.699: [pipewire] Asking for monitor and window
+00:43:18.706: [pipewire] source selected, setting up screencast
+00:43:18.711: [pipewire] Server version: 1.4.7
+00:43:18.711: [pipewire] Library version: 1.4.7
+00:43:18.711: [pipewire] Header version: 1.4.7
+00:43:18.711: [pipewire] Created stream 0x5afe1d0
+00:43:18.711: [pipewire] Stream 0x5afe1d0 state: "connecting" (error: none)
+00:43:18.712: [pipewire] Playing stream 0x5afe1d0
+00:43:18.712: [pipewire] Stream 0x5afe1d0 state: "paused" (error: none)
+00:43:18.722: [pipewire] Negotiated format:
+00:43:18.722: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+00:43:18.722: [pipewire]     Modifier: 0x0
+00:43:18.722: [pipewire]     Size: 1920x1080
+00:43:18.722: [pipewire]     Framerate: 0/1
+00:43:18.723: [pipewire] Negotiated format:
+00:43:18.723: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+00:43:18.723: [pipewire]     Modifier: 0x20000044051ba01
+00:43:18.723: [pipewire]     Size: 1920x1080
+00:43:18.723: [pipewire]     Framerate: 0/1
+00:43:18.724: [pipewire] Stream 0x5afe1d0 state: "streaming" (error: none)
+00:43:18.734: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+00:43:18.735: [pipewire] Renegotiating stream
+00:43:18.735: [pipewire] Stream 0x5afe1d0 state: "paused" (error: none)
+00:43:18.735: [pipewire] Negotiated format:
+00:43:18.735: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+00:43:18.735: [pipewire]     Modifier: 0x20000044051ba01
+00:43:18.735: [pipewire]     Size: 1920x1080
+00:43:18.735: [pipewire]     Framerate: 0/1
+00:43:18.735: [pipewire] Negotiated format:
+00:43:18.735: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+00:43:18.735: [pipewire]     Modifier: 0x20000044051b901
+00:43:18.735: [pipewire]     Size: 1920x1080
+00:43:18.735: [pipewire]     Framerate: 0/1
+00:43:18.736: [pipewire] Stream 0x5afe1d0 state: "streaming" (error: none)
+00:43:18.751: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+00:43:18.751: [pipewire] Renegotiating stream
+00:43:18.752: [pipewire] Stream 0x5afe1d0 state: "paused" (error: none)
+00:43:18.752: [pipewire] Negotiated format:
+00:43:18.752: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+00:43:18.752: [pipewire]     Modifier: 0x20000044051b901
+00:43:18.752: [pipewire]     Size: 1920x1080
+00:43:18.752: [pipewire]     Framerate: 0/1
+00:43:18.752: [pipewire] Negotiated format:
+00:43:18.752: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+00:43:18.752: [pipewire]     Modifier: 0x200000440517901
+00:43:18.752: [pipewire]     Size: 1920x1080
+00:43:18.752: [pipewire]     Framerate: 0/1
+00:43:18.753: [pipewire] Stream 0x5afe1d0 state: "streaming" (error: none)
+00:43:18.768: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+00:43:18.768: [pipewire] Renegotiating stream
+00:43:18.769: [pipewire] Stream 0x5afe1d0 state: "paused" (error: none)
+00:43:18.769: [pipewire] Negotiated format:
+00:43:18.769: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+00:43:18.769: [pipewire]     Modifier: 0x200000440517901
+00:43:18.769: [pipewire]     Size: 1920x1080
+00:43:18.769: [pipewire]     Framerate: 0/1
+00:43:18.769: [pipewire] Negotiated format:
+00:43:18.769: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+00:43:18.769: [pipewire]     Modifier: 0x200000000401a01
+00:43:18.769: [pipewire]     Size: 1920x1080
+00:43:18.769: [pipewire]     Framerate: 0/1
+00:43:18.770: [pipewire] Stream 0x5afe1d0 state: "streaming" (error: none)
+00:43:21.291: ---------------------------------
+00:43:21.291: [x264 encoder: 'simple_video_recording'] preset: veryfast
+00:43:21.291: [x264 encoder: 'simple_video_recording'] profile: high
+00:43:21.291: [x264 encoder: 'simple_video_recording'] settings:
+00:43:21.291: 	rate_control: CRF
+00:43:21.291: 	bitrate:      0
+00:43:21.291: 	buffer size:  0
+00:43:21.291: 	crf:          23
+00:43:21.291: 	fps_num:      60
+00:43:21.291: 	fps_den:      1
+00:43:21.291: 	width:        1920
+00:43:21.291: 	height:       1080
+00:43:21.291: 	keyint:       250
+00:43:21.291: 
+00:43:21.299: libfdk_aac encoder created
+00:43:21.299: libfdk_aac bitrate: 192, channels: 2
+00:43:21.322: ==== Recording Start ===============================================
+00:43:21.322: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/logemi/2025-09-20 00-43-21.mkv'...
+00:43:32.928: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/logemi/2025-09-20 00-43-21.mkv' stopped
+00:43:32.928: Output 'simple_file_output': stopping
+00:43:32.928: Output 'simple_file_output': Total frames output: 666
+00:43:32.928: Output 'simple_file_output': Total drawn frames: 696
+00:43:32.929: ==== Recording Stop ================================================
+00:43:32.941: libfdk_aac encoder destroyed
+00:43:49.676: Settings changed (outputs)
+00:43:49.677: ------------------------------------------------
+00:43:52.618: ---------------------------------
+00:43:52.618: [x264 encoder: 'simple_video_recording'] preset: veryfast
+00:43:52.618: [x264 encoder: 'simple_video_recording'] profile: high
+00:43:52.618: [x264 encoder: 'simple_video_recording'] settings:
+00:43:52.618: 	rate_control: CRF
+00:43:52.618: 	bitrate:      0
+00:43:52.618: 	buffer size:  0
+00:43:52.618: 	crf:          23
+00:43:52.618: 	fps_num:      60
+00:43:52.618: 	fps_den:      1
+00:43:52.618: 	width:        1920
+00:43:52.618: 	height:       1080
+00:43:52.618: 	keyint:       250
+00:43:52.618: 
+00:43:52.621: libfdk_aac encoder created
+00:43:52.621: libfdk_aac bitrate: 192, channels: 2
+00:43:52.622: ==== Recording Start ===============================================
+00:43:52.622: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/logemi/Videos/2025-09-20 00-43-52.mp4'...
+00:44:03.972: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/logemi/Videos/2025-09-20 00-43-52.mp4' stopped
+00:44:03.972: Output 'simple_file_output': stopping
+00:44:03.972: Output 'simple_file_output': Total frames output: 648
+00:44:03.972: Output 'simple_file_output': Total drawn frames: 681
+00:44:03.973: ==== Recording Stop ================================================
+00:44:04.029: libfdk_aac encoder destroyed
+00:47:07.781: ---------------------------------
+00:47:07.781: [x264 encoder: 'simple_video_recording'] preset: veryfast
+00:47:07.781: [x264 encoder: 'simple_video_recording'] profile: high
+00:47:07.781: [x264 encoder: 'simple_video_recording'] settings:
+00:47:07.781: 	rate_control: CRF
+00:47:07.781: 	bitrate:      0
+00:47:07.781: 	buffer size:  0
+00:47:07.781: 	crf:          23
+00:47:07.781: 	fps_num:      60
+00:47:07.781: 	fps_den:      1
+00:47:07.781: 	width:        1920
+00:47:07.781: 	height:       1080
+00:47:07.781: 	keyint:       250
+00:47:07.781: 
+00:47:07.784: libfdk_aac encoder created
+00:47:07.784: libfdk_aac bitrate: 192, channels: 2
+00:47:07.786: ==== Recording Start ===============================================
+00:47:07.786: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/logemi/Videos/2025-09-20 00-47-07.mp4'...
+00:47:17.525: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/logemi/Videos/2025-09-20 00-47-07.mp4' stopped
+00:47:17.525: Output 'simple_file_output': stopping
+00:47:17.525: Output 'simple_file_output': Total frames output: 552
+00:47:17.525: Output 'simple_file_output': Total drawn frames: 585
+00:47:17.526: ==== Recording Stop ================================================
+00:47:17.543: libfdk_aac encoder destroyed
+04:51:40.689: adding 21 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Desktop Audio)
+04:51:40.689: 

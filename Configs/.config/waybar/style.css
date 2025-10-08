@@ -1,0 +1,62 @@
+* {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#waybar {
+  font-family: "DepartureMono Nerd Font";
+  font-size: 22px;
+  /* border: 2px solid; */
+  /* border-color: rgba(36, 230, 255, 0.35); */
+  /* padding: 10px; */
+}
+
+#workspaces,
+#mpd,
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#battery,
+#clock,
+#tray,
+#tray menu,
+#custom-notification {
+  color: #ff10b0;
+  border: 2px solid;
+  border-color: rgba(36, 150, 255, 0.85);
+  background: rgba(0, 0, 20, 0.8);
+  padding: 5px;
+  margin: 4px;
+  box-shadow: 4px 4px #200050;
+}
+
+#tray menu button:hover {
+  color: #ff20ff;
+}
+
+#workspaces button {
+  color: #ff10b0;
+  padding: 1px 5px 1px 6px;
+  background: transparent;
+  border-bottom: 3px solid transparent;
+}
+
+#workspaces button:hover {
+  transition: none;
+  border-bottom: 2px solid #ff20ff;
+  color: #ff20ff;
+}
+
+#workspaces button.active {
+  color: #ff20ff;
+  border-bottom: 2px solid #ff20ff;
+  background: #ff20ff;
+  background: linear-gradient(0deg, #ff20ff 0%, transparent 50%);
+}
