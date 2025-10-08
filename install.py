@@ -39,9 +39,9 @@ def installEntry(to_link: str, src: str):
     print(f"Creating symlink {to_link} -> {src}")
 
     path = Path(to_link)
-    if path.is_file():
+    if path.is_file() or path.is_symlink():
         os.remove(to_link)
-    elif path.is_dir():
+    elif path.is_dir(follow_symlinks=False):
         shutil.rmtree(to_link)
 
     os.symlink(src, to_link, target_is_directory=Path(src).is_dir())
@@ -68,6 +68,7 @@ def main():
     topics = {
         "home": HOME,
         ".config": HOME+"/.config",
+        "nixos": HOME+"/nixos"
     }
 
     while True:

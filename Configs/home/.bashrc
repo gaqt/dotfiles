@@ -15,7 +15,7 @@ alias cd="z"
 export LANG="en_GB.UTF-8"
 export LC_ALL="en_GB.UTF-8"
 
-export RUSTC_WRAPPER="$(which sccache)"
+# export RUSTC_WRAPPER="$(which sccache)"
 
 eval "$(zoxide init bash)"
 

@@ -14,8 +14,12 @@ alias paru='paru --color=auto'
 export EDITOR="nvim"
 export visual="vim"
 alias ls="exa"
+alias lsa="ls -a"
+alias lsl="ls -l"
+alias lsla="ls -la"
 alias mommy="cargo mommy"
 alias cd="z"
+alias rebuild="bash ~/nixos/rebuild.sh"
 export LANG="en_GB.UTF-8"
 export LC_ALL="en_GB.UTF-8"
 
