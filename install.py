@@ -68,7 +68,6 @@ def main():
     topics = {
         "home": HOME,
         ".config": HOME+"/.config",
-        "nixos": HOME+"/nixos"
     }
 
     while True:
