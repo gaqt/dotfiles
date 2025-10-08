@@ -3,72 +3,59 @@
 import os
 import datetime
 import shutil
+from pathlib import Path
 
 CWD = os.getcwd()
 TIMESTAMP = datetime.datetime.now().isoformat()
 BACKUP_DIR = CWD+"/Backups/"+TIMESTAMP
 HOME = "/home/"+CWD.split("/home/")[1].split("/")[0]
 
+def backupEntry(to_copy: str, dest: str):
+    print(f"Backing up entry {to_copy}")
 
-def backupFile(path: str):
-    if not os.path.exists(path):
-        return
+    path = Path(to_copy)
+    if not path.exists():
+        print("Not Found")
 
-    if os.path.islink(path) and CWD in os.readlink(path):
-        print(f"File {path} is owned symlink, removing..")
-        os.remove(path)
-        return
-
-    filename = path.split("/").pop()
-    reldir = path[:path.rfind(filename)].split(HOME)[1][:-1]
-    newFileDir = BACKUP_DIR+reldir
-    newPath = f"{newFileDir}/{filename}"
-
-    print(f"Backing up file {path} to {newPath}")
-
-    os.makedirs(newFileDir, exist_ok=True)
-    shutil.move(path, f"{newPath}")
+    if path.is_file():
+        shutil.copy(to_copy, dest)
+    elif path.is_dir():
+        shutil.copytree(to_copy, dest, ignore_dangling_symlinks=True)
 
 
-def backupTopic(topic: str):
-    topicPath = CWD+"/"+topic
-
+def backupTopic(topic: str, dest: str):
     print(f"Backing up topic {topic}")
 
-    w = os.walk(topicPath)
+    topicPath = CWD+"/Configs/"+topic
+    backupPath = BACKUP_DIR+"/"+topic
+    os.makedirs(backupPath, exist_ok=True)
+    w = os.scandir(topicPath)
 
-    for root, _, files in w:
-        for filename in files:
-            original = (f"{root}/{filename}") \
-                .replace(topicPath, HOME)
-
-            backupFile(original)
-
-
-def installFile(root: str, path: str):
-    filename = path.split("/").pop()
-    reldir = path[:path.rfind(filename)].split(root)[1][:-1]
-    newFileDir = HOME+reldir
-    newPath = f"{newFileDir}/{filename}"
-
-    print(f"Creating symlink {newPath} -> {path}")
-
-    os.makedirs(newFileDir, exist_ok=True)
-    os.symlink(path, newPath)
-    os.system(f"chmod +x {newPath}")
+    for d in w:
+        backupEntry(dest + "/" + d.name, backupPath + "/" + d.name)
 
 
-def installTopic(topic: str):
-    topicPath = CWD+"/"+topic
+def installEntry(to_link: str, src: str):
+    print(f"Creating symlink {to_link} -> {src}")
 
+    path = Path(to_link)
+    if path.is_file():
+        os.remove(to_link)
+    elif path.is_dir():
+        shutil.rmtree(to_link)
+
+    os.symlink(src, to_link, target_is_directory=Path(src).is_dir())
+
+
+def installTopic(topic: str, dest: str):
     print(f"Installing topic {topic}")
 
-    w = os.walk(topicPath)
+    topicPath = CWD+"/Configs/"+topic
+    os.makedirs(dest, exist_ok=True)
+    w = os.scandir(topicPath)
 
-    for root, _, files in w:
-        for filename in files:
-            filepath = (f"{root}/{filename}")
-            installFile(topicPath, filepath)
+    for d in w:
+        installEntry(dest + "/" + d.name, topicPath + "/" + d.name);
 
 
 def main():
@@ -78,6 +65,11 @@ def main():
     print("CWD: "+CWD)
     print("HOME: "+HOME)
 
+    topics = {
+        "home": HOME,
+        ".config": HOME+"/.config",
+    }
+
     while True:
         res = input("Proceed? [y/n]: ")
         if res == "y":
@@ -86,13 +78,15 @@ def main():
             return
 
     try:
-        backupTopic("Configs")
+        for t,dest in topics.items():
+            backupTopic(t,dest)
     except Exception as err:
         print("Error ocurred while backing up, aborting..")
         raise err
 
     try:
-        installTopic("Configs")
+        for t,dest in topics.items():
+            installTopic(t,dest)
     except Exception as err:
         print("Error occured while installing rice, aborting..")
         raise err

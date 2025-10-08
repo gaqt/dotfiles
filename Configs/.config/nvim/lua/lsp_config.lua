@@ -92,6 +92,7 @@ vim.lsp.enable("htmx")
 vim.lsp.enable("emmet_language_server")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("jinja_lsp")
+vim.lsp.enable("pyright")
 
 
 vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float)
